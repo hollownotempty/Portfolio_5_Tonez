@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap');
+
+
+p {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ------------------- Side Bar */
+
+#sidebar {
+    padding: 0;
+    height: 100vh;
+}
+
+#logo {
+    font-family: 'Bebas Neue', sans-serif;
+    margin-top: 25px;
+}
+
+.nav-link {
+    font-size: 30px;
+}
+
+.nav-link,
+a {
+    font-family: 'Bebas Neue', sans-serif;
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+    opacity: 0.7;
+}
+
+a:active {
+    color: white;
+    opacity: 0.7;
+}
+
+#sidebar .row {
+    margin: 0;
+}
+
+#sidebar hr {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#sidebar footer {
+    position: absolute;
+    bottom: 0;
+}
+
+footer a {
+    font-size: 20px;
+}
+
+/* ------------------- Content Section */
+
+#page-content {
+    background-color: antiquewhite;
+}
+
+/* ------------------- Search Bar */
+
+body {
+    background-color: #eee
+}
+
+.card {
+    background-color: #fff;
+    border: none
+}
+
+.input-box {
+    position: relative
+}
+
+.input-box i {
+    position: absolute;
+    right: 13px;
+    top: 15px;
+    color: #ced4da
+}
+
+.form-control {
+    height: 50px;
+    background-color: #eeeeee69
+}
+
+.form-control:focus {
+    background-color: #eeeeee69;
+    box-shadow: none;
+    border-color: #eee
+}
+
+.list {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center
+}
+
+.border-bottom {
+    border-bottom: 2px solid #eee
+}
+
+.list i {
+    font-size: 19px;
+    color: red
+}
+
+.list small {
+    color: #dedddd
+}
