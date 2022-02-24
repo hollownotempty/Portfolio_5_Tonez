@@ -58,7 +58,7 @@ footer a {
 /* ------------------- Content Section */
 
 #page-content {
-    background-color: antiquewhite;
+    background-color: #fafafa;
     padding: 0;
 }
 
@@ -149,4 +149,16 @@ footer a {
     z-index: 10000;
     top: 0;
     width: 80%;
+}
+#
+
+
+/* ------------------------- Pack Display */
+
+.pack-display {
+    border: solid 1px black;
+}
+
+.packs-all {
+    margin-top: 110px;
 }

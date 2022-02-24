@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %}| Packs{% endblock %}
+{% block content %}
+
+<div id="search-bar" class="row d-flex justify-content-center my-2">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="input-box"> <input type="text" class="form-control" placeholder="Search..."> <i
+                    class="fa fa-search"></i> </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <img src="{{ pack.image.url }}" alt="" class="pack-detail-image">
+    </div>
+</div>
+
+{% endblock %}
