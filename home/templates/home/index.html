@@ -3,6 +3,7 @@
 
 {% block extra_title %}| Home{% endblock %}
 {% block content %}
+
 <div id="search-bar" class="row d-flex justify-content-center my-2">
     <div class="col-md-6">
         <div class="card">
@@ -11,12 +12,22 @@
     </div>
 </div>
 
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
-    <a href="#"><div class="carousel-item item-1 active"></div></a>
-    <a href="#"><div class="carousel-item item-2"></div></a>
-    <a href="#"><div class="carousel-item item-3"></div></a>
+    <div class="carousel-item item-1 active"><a href="#"></a></div>
+    <div class="carousel-item item-2"><a href="#"></a></div>
+    <div class="carousel-item item-3"><a href="#"></a></div>
   </div>
 </div>
   
+{% endblock %}
+
+{% block postload_js %}
+<script>
+  var myCarousel = document.querySelector('#myCarousel')
+  var carousel = new bootstrap.Carousel(myCarousel, {
+    interval: 2000,
+    wrap: false
+  })
+</script>
 {% endblock %}
