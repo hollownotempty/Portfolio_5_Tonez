@@ -1,22 +1,25 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_title %}| Packs{% endblock %}
+{% block extra_title %}| {{ pack.name }}{% endblock %}
 {% block content %}
 
-<div id="search-bar" class="row d-flex justify-content-center my-2">
-    <div class="col-md-6">
-        <div class="card">
-            <div class="input-box"> <input type="text" class="form-control" placeholder="Search..."> <i
-                    class="fa fa-search"></i> </div>
+    <div class="container-fluid">
+        <div class="row pack-detail-margin">
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+                <a href="{{ pack.image.url }}" target="_blank">
+                    <img class="card-img-top img-fluid" src="{{ pack.image.url }}" alt="{{ product.name }}">
+                </a>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mt-5">
+                <div class="product-details">
+                    <h1>{{ pack.name }}</h1>
+                    <p class="text-muted">{{ pack.description }}</p>
+                    <p class="pack-price">£{{ pack.price }}</p>
+                    <p><strong>Category:</strong> <a href="{% url 'packs' %}?category={{ pack.category.name }}">{{ pack.category.friendly_name }}</a></p>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-
-<div class="row">
-    <div class="col-6">
-        <img src="{{ pack.image.url }}" alt="" class="pack-detail-image">
-    </div>
-</div>
 
 {% endblock %}

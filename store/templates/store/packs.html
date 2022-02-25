@@ -4,39 +4,31 @@
 {% block extra_title %}| Packs{% endblock %}
 {% block content %}
 
-<div id="search-bar" class="row d-flex justify-content-center my-2">
-    <div class="col-md-6">
-        <div class="card">
-            <div class="input-box"> <input type="text" class="form-control" placeholder="Search..."> <i
-                    class="fa fa-search"></i> </div>
-        </div>
-    </div>
-</div>
-<div class="row mx-5 packs-all">
-    {% for pack in packs %}
-    <div class="col-sm-6 col-md-6 col-lg-3 col-xl-4">
-        <div class="card h-100 border-0">
-            <a href="{% url 'pack_detail' pack.id %}">
-                <img class="card-img-top img-fluid" src="{{ pack.image.url }}" alt="{{ pack.name }}">
-            </a>
-            <div class="card-body pb-0">
-                <p class="mb-0">{{ pack.name }}</p>
-            </div>
-            <div class="card-footer bg-white pt-0 border-0 text-left">
-                <div class="row">
-                    <div class="col">
-                        <p class="lead mb-0 text-left font-weight-bold">${{ pack.price }}</p>
-                        <p class="small mt-1 mb-0">
-                            <p class="text-muted">
-                                {{ pack.category }}
-                            </p>
-                        </p>
+    <div class="row mx-5 packs-all">
+        {% for pack in packs %}
+            <div class="col-sm-6 col-md-6 col-lg-3 col-xl-4">
+                <div class="card h-100 border-0">
+                    <a href="{% url 'pack_detail' pack.id %}">
+                        <img class="card-img-top img-fluid" src="{{ pack.image.url }}" alt="{{ pack.name }}">
+                    </a>
+                    <div class="card-body pb-0">
+                        <p class="mb-0">{{ pack.name }}</p>
+                    </div>
+                    <div class="card-footer bg-white pt-0 border-0 text-left">
+                        <div class="row">
+                            <div class="col pack-details-card">
+                                <p class="lead mb-0 text-left font-weight-bold">${{ pack.price }}</p>
+                                <p class="small mt-1 mb-0">
+                                    <p class="text-muted">
+                                        <a href="{% url 'packs' %}?category={{ pack.category.name }}">{{ pack.category }}</a>
+                                    </p>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-</div>
 
 {% endblock %}
