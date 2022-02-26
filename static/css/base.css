@@ -206,6 +206,11 @@ footer a {
     color: black;
 }
 
+#demo-player {
+    width: 80%;
+    margin: 0 auto;
+}
+
 /* ------------------------- Pack Detail Page */
 
 #shopping-cart-container {

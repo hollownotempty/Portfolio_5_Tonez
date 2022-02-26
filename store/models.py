@@ -17,6 +17,7 @@ class Packs(models.Model):
     description = models.TextField(max_length=500)
     image = models.ImageField(null=False, blank=False, upload_to="uploads/products/")
     file = models.FileField(upload_to="uploads/files/")
+    demo_link = models.TextField(max_length=1000)
 
     def __str__(self):
         return self.name
