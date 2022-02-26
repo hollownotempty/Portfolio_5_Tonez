@@ -1,1 +1,1 @@
-web: gunicorn portfolio-5-tonez.wsgi
+web: gunicorn Tonez.wsgi
