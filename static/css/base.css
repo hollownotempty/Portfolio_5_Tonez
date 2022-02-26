@@ -121,7 +121,15 @@ footer a {
     top: 0;
     right: 0;
     z-index: 100000;
-    color: white;
+}
+
+#shopping-bag p {
+    color: black;
+}
+
+#shopping-bag i {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px black;
 }
 
 /* ------------------------- Carousel */

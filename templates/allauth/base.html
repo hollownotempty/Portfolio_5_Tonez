@@ -83,7 +83,6 @@
 
       </div>
 
-
       <div id="page-content" class="col">
 
         <form method="GET" action="{% url 'packs' %}">
@@ -104,7 +103,7 @@
         </form>
 
         <div id="shopping-bag" class="text-center mt-3 me-3">
-          <a href="">
+          <a href="{% url 'shopping_cart' %}">
             <div><i class="fas fa-shopping-bag fa-lg"></i></div>
             <p class="my-0">
               {% if grand_total %}
@@ -115,9 +114,6 @@
             </p>
           </a>
         </div>
-
-
-
 
         {% block content %}
         {% endblock %}
