@@ -85,6 +85,17 @@
 
       <div id="page-content" class="col">
 
+        {% if messages %}
+        <div>
+          <strong>Messages:</strong>
+          <ul>
+            {% for message in messages %}
+            <li>{{message}}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+
         <form method="GET" action="{% url 'packs' %}">
           <div id="search-bar" class="row d-flex justify-content-center my-2">
               <div class="col-md-6">

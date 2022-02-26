@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 
 # Create your views here.
 
@@ -15,12 +16,12 @@ def add_to_cart(request, item_id):
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
 
-    # if item_id in list(bag.keys()):
-    #     # do something
-    # else:
-    #     bag[item_id] = quantity
+    if item_id in list(cart.keys()):
+        messages.warning(request, 'You already have this pack in your cart!')
+    else:
+        cart[item_id] = quantity
 
-    cart[item_id] = quantity
+    # cart[item_id] = quantity
 
     request.session['cart'] = cart
     print(request.session['cart'])
