@@ -116,6 +116,13 @@ footer a {
     color: #dedddd
 }
 
+#shopping-bag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100000;
+    color: white;
+}
 
 /* ------------------------- Carousel */
 
