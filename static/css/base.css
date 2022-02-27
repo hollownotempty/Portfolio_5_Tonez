@@ -215,3 +215,10 @@ footer a {
 #shopping-cart-container {
     margin-top: 90px;
 }
+
+/* ------------------------- Shopping Cart Page */
+
+.cart-details a {
+    font-family: 'Roboto', sans-serif;
+    color: black;
+}
