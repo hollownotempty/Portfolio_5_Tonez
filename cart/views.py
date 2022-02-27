@@ -3,6 +3,7 @@ from django.contrib import messages
 
 # Create your views here.
 
+
 def shopping_cart(request):
     """ A view to show shopping cart. """
 
@@ -21,8 +22,5 @@ def add_to_cart(request, item_id):
     else:
         cart[item_id] = quantity
 
-    # cart[item_id] = quantity
-
     request.session['cart'] = cart
-    print(request.session['cart'])
     return redirect(redirect_url)

@@ -23,7 +23,7 @@ def packs(request):
             
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             packs = packs.filter(queries)
-
+            
     context = {
         'packs': packs,
         'search_term': query,
