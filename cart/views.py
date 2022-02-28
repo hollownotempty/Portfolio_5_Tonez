@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 
 # Create your views here.
@@ -24,3 +24,14 @@ def add_to_cart(request, item_id):
 
     request.session['cart'] = cart
     return redirect(redirect_url)
+
+
+def remove_from_cart(request, item_id):
+    """ Add items to the bag """
+
+    cart = request.session.get('cart', {})
+
+    cart.pop(item_id)
+
+    request.session['cart'] = cart
+    return redirect(reverse('shopping_cart'))

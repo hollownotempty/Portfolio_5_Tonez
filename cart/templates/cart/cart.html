@@ -22,6 +22,7 @@
                             <th scope="col"></th>
                             <th scope="col">Price</th>
                             <th scope="col">Subtotal</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
 
@@ -38,6 +39,9 @@
                             </td>
                             <td class="py-3">
                                 <p class="my-0">${{ item.pack.price }}</p>
+                            </td>
+                            <td class="py-3">
+                                <a href="{% url 'remove_from_cart' item.pack.id %}"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                     {% endfor %}
