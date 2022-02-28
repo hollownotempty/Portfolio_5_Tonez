@@ -8,6 +8,7 @@ def cart_contents(request):
     cart_items = []
     total = 0
     product_count = 0
+    discount_percentage = 0
     cart = request.session.get('cart', {})
 
     for item_id, quantity in cart.items():
@@ -19,13 +20,18 @@ def cart_contents(request):
             'pack': pack,
         })
 
-    grand_total = total
+    if total >= 45:
+        quotient = 3 / 20
+        discount_percentage = quotient * float(total)
+        total = float(total) - discount_percentage
 
+    grand_total = total
 
     context = {
         'cart_items': cart_items,
         'total': total,
         'product_count': product_count,
         'grand_total': grand_total,
+        'discount': discount_percentage,
     }
     return context

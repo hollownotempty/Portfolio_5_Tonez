@@ -48,6 +48,18 @@
 
                     <tr>
                         <td colspan="5" class="text-end">
+                            <h4>
+                                {% if discount %}
+                                    Discount: - ${{ discount | floatformat:2 }}
+                                {% else %}
+                                    Discount: $0.00
+                                {% endif %}
+                            </h4>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="5" class="text-end">
                             <h4>Grand Total: ${{ grand_total | floatformat:2 }}</h4>
                         </td>
                     </tr>
