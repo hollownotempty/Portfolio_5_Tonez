@@ -50,27 +50,27 @@
       <div id="sidebar" class="col-2 bg-black text-light sticky-top text-center d-none d-sm-none d-md-block">
 
         <div id="main-nav" class="row">
-            <div class="align-middle">
-              <h1 id="logo" class="display-1 my-2">Tonez</h1>
-            </div>
-            <hr>
-            <ul class="nav flex-column nav-fill">
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'home' %}">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Profile</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'packs' %}">Packs</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-              </li>
-            </ul>
-            <hr>
+          <div class="align-middle">
+            <h1 id="logo" class="display-1 my-2">Tonez</h1>
+          </div>
+          <hr>
+          <ul class="nav flex-column nav-fill">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'packs' %}">Packs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+            </li>
+          </ul>
+          <hr>
         </div>
-        
+
         <div id="announcement-banner" class="row my-3">
           <div>
             <p class="text-uppercase">
@@ -78,14 +78,14 @@
             </p>
           </div>
         </div>
-        
+
         <footer class="row w-100">
           <ul class="list-inline my-2">
             <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
             <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
             <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
           </ul>
-            <p><small>Copyright Tonez 2022 &#169;</small></p>
+          <p><small>Copyright Tonez 2022 &#169;</small></p>
         </footer>
 
       </div>
@@ -108,22 +108,20 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'contact' %}"><i class="fas fa-envelope"></i></a>
             </li>
-            <li>
-              <div id="shopping-bag" class="text-center mt-3 me-3 d-none d-md-block">
-                <a href="{% url 'shopping_cart' %}">
-                  <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                  <p class="my-0">
-                    {% if grand_total %}
-                    ${{ grand_total|floatformat:2 }}
-                    {% else %}
-                    $0.00
-                    {% endif %}
-                  </p>
-                </a>
-              </div>
+            <li class="nav-item">
+              <a href="{% url 'shopping_cart' %}">
+                <i class="fas fa-shopping-bag"></i>
+                <p class="my-0">
+                  {% if grand_total %}
+                  ${{ grand_total|floatformat:2 }}
+                  {% else %}
+                  $0.00
+                  {% endif %}
+                </p>
+              </a>
             </li>
           </ul>
-      </div>
+        </div>
       </div>
 
       <div id="page-content" class="col">
@@ -140,20 +138,21 @@
         {% endif %}
 
         <div class="d-none d-md-block">
-          <form method="GET" action="{% url 'packs' %}" class="" >
+          <form method="GET" action="{% url 'packs' %}" class="">
             <div id="search-bar" class="row d-flex justify-content-center my-2 ">
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="input-group rounded-0">
-                            <input type="text" class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search...">
-                            <button class="btn" type="submit">
-                                <span class="icon">
-                                    <i class="fas fa-search"></i>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="input-group rounded-0">
+                    <input type="text" class="form-control border border-black rounded-0" type="text" name="q"
+                      placeholder="Search...">
+                    <button class="btn" type="submit">
+                      <span class="icon">
+                        <i class="fas fa-search"></i>
+                      </span>
+                    </button>
+                  </div>
                 </div>
+              </div>
             </div>
           </form>
         </div>
@@ -170,7 +169,7 @@
             </p>
           </a>
         </div>
-        
+
         {% block content %}
         {% endblock %}
       </div>
