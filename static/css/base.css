@@ -214,11 +214,14 @@ footer a {
 
 /* ------------------------- Shopping Cart Page */
 
-#shopping-cart-container {
-    margin-top: 90px;
-}
-
 .cart-details a {
     font-family: 'Roboto', sans-serif;
     color: black;
+}
+
+
+/* ------------------------- Contact Form */
+
+.contact-margin {
+    margin-top: 90px;
 }
