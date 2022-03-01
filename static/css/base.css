@@ -14,9 +14,14 @@ h4 {
 
 /* ------------------- Side Bar */
 
-#sidebar {
+#sidebar,
+#sidebar-mobile {
     padding: 0;
     height: 100vh;
+}
+
+#sidebar-mobile .nav {
+    padding: 0;
 }
 
 #logo {
