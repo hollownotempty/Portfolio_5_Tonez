@@ -23,9 +23,9 @@ def cart_contents(request):
     if total >= 45:
         quotient = 3 / 20
         discount_percentage = quotient * float(total)
-        total = float(total) - discount_percentage
+        new_total = float(total) - discount_percentage
 
-    grand_total = total
+    grand_total = new_total
 
     context = {
         'cart_items': cart_items,

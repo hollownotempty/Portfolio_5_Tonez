@@ -225,6 +225,12 @@ footer a {
 }
 
 
+/* ------------------------- Checkout Page */
+
+#checkout-container {
+    margin-top: 110px;
+}
+
 /* ------------------------- Contact Form */
 
 .contact-margin {
