@@ -15,17 +15,15 @@ def cart_contents(request):
         pack = get_object_or_404(Packs, pk=item_id)
         total += pack.price
         product_count += 1
+        stripe_price_id = pack.stripe_price_id
         cart_items.append({
             'item_id': item_id,
+            'quantity': quantity,
             'pack': pack,
+            'stripe_price_id': stripe_price_id,
         })
 
-    if total >= 45:
-        quotient = 3 / 20
-        discount_percentage = quotient * float(total)
-        new_total = float(total) - discount_percentage
-
-    grand_total = new_total
+    grand_total = total
 
     context = {
         'cart_items': cart_items,

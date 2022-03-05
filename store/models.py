@@ -10,7 +10,9 @@ class Categories(models.Model):
     def __str__(self):
         return self.friendly_name
 
+
 class Packs(models.Model):
+    """ Packs model """
     name = models.CharField(max_length=100)
     category = models.ForeignKey(Categories, on_delete=models.DO_NOTHING)
     price = models.DecimalField(max_digits=4, decimal_places=2)
@@ -18,6 +20,7 @@ class Packs(models.Model):
     image = models.ImageField(null=False, blank=False, upload_to="uploads/products/")
     file = models.FileField(upload_to="uploads/files/")
     demo_link = models.TextField(max_length=1000)
+    stripe_price_id = models.CharField(max_length=200)
 
     def __str__(self):
         return self.name
