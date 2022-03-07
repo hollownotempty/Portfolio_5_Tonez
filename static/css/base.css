@@ -219,6 +219,10 @@ footer a {
 
 /* ------------------------- Shopping Cart Page */
 
+#shopping-cart-container {
+    margin-top: 110px;
+}
+
 .cart-details a {
     font-family: 'Roboto', sans-serif;
     color: black;
@@ -235,4 +239,10 @@ footer a {
 
 .contact-margin {
     margin-top: 90px;
+}
+
+/* ------------------------- Success Page */
+
+#success-page-container {
+    margin-top: 110px;
 }

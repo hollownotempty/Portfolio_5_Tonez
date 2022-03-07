@@ -1,1 +1,26 @@
-<h1>success</h1>
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %}| Home{% endblock %}
+{% block content %}
+
+<div id="success-page-container" class="text-center mx-3">
+    <div class="success-inner">
+        <h1>
+            Order Placed Successfully!
+        </h1>
+
+        <p>
+            Thank you for your order, your order number is {order number}. You should receive an email with your product soon.
+        </p>
+
+        <a href="{% url 'home' %}" class="btn btn-light rounded-0 btn-lg">
+            <span class="icon">
+                <i class="fas fa-chevron-left"></i>
+            </span>
+            <span class="text-uppercase">Back to Home</span>
+        </a>
+    </div>
+</div>
+
+{% endblock %}
