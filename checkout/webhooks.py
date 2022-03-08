@@ -27,7 +27,7 @@ def webhook(request):
     handler = StripeWhHandler(request)
 
     event_map = {
-        'checkout.session.succeeded': handler.handle_checkout_session_succeeded,
+        'checkout.session.completed': handler.handle_checkout_session_completed,
         'payment_intent.payment_failed': handler.handle_payment_intent_payment_failed,
     }
 

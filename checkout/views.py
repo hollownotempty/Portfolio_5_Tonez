@@ -1,14 +1,11 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.conf import settings
-from django.http import HttpResponse
-from django.views.decorators.csrf import csrf_exempt
 
 import json
 import stripe
 
 from store.models import Packs
-from .models import Order, OrderLineItem
 
 
 from .forms import OrderForm
@@ -40,11 +37,11 @@ def create_checkout_session(request):
     if request.method == 'POST':
         cart = request.session.get('cart', {})
 
-        form_data = {
-            'full_name': request.POST['full_name'],
-            'email': request.POST['email'],
-            'phone_number': request.POST['phone_number'],
-        }
+        # form_data = {
+        #     'full_name': request.POST['full_name'],
+        #     'email': request.POST['email'],
+        #     'phone_number': request.POST['phone_number'],
+        # }
 
         # order_form = OrderForm(form_data)
         # if order_form.is_valid():
@@ -78,6 +75,12 @@ def create_checkout_session(request):
     checkout_session = stripe.checkout.Session.create(
         line_items=line_items,
         mode='payment',
+        metadata={
+            'full_name': request.POST['full_name'],
+            'email': request.POST['email'],
+            'phone_number': request.POST['phone_number'],
+            'cart': json.dumps(request.session.get('cart', {}))
+        },
         allow_promotion_codes=True,
         success_url=YOUR_DOMAIN + 'checkout/success/',
         cancel_url=YOUR_DOMAIN + 'checkout/cancel/',
