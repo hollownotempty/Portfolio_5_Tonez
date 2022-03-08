@@ -1,7 +1,10 @@
 from django.http import HttpResponse
 
 
-class StripeWH_Handler:
+class StripeWhHandler:
+    """
+    Custom webhook handler
+    """
     def __init__(self, request):
         self.request = request
 
@@ -14,3 +17,24 @@ class StripeWH_Handler:
             content=f'Webhook received: {event["type"]}',
             status=200
         )
+
+    def handle_payment_intent_succeeded(self,event):
+        """
+        Handle the payment_intent_succeeded webhook event
+        """
+
+        return HttpResponse(
+            content=f'Webhook received: {event["type"]}',
+            status=200
+        )
+
+    def handle_payment_intent_payment_failed(self,event):
+        """
+        Handle the payment_intent_failed webhook event
+        """
+
+        return HttpResponse(
+            content=f'Webhook received: {event["type"]}',
+            status=200
+        )
+
