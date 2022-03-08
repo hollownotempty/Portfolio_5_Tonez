@@ -82,11 +82,14 @@ def create_checkout_session(request):
         cancel_url=YOUR_DOMAIN + 'checkout/cancel/',
     )
 
+    request.session['order_number'] = order.order_number
+
     return redirect(checkout_session.url, code=303)
 
 
-def cancel():
-    return redirect(reverse('shopping_cart'))
+def cancel(request):
+    
+    return redirect('reverse('shopping_cart')')
 
 
 def success(request):
