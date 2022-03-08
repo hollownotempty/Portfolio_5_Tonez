@@ -14,6 +14,7 @@ from .models import Order, OrderLineItem
 from .forms import OrderForm
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
+stripe.api_version = "2020-08-27"
 
 # Create your views here.
 
@@ -37,7 +38,7 @@ def checkout(request):
 def create_checkout_session(request):
     """ Create checkout session Stripe """
 
-    YOUR_DOMAIN = 'https://8000-hollownotempty-portfolio-kuwz79nvo6k.ws-eu34.gitpod.io/'
+    YOUR_DOMAIN = 'http://localhost:8000/'
 
     cart = request.session.get('cart', {})
 
@@ -63,9 +64,8 @@ def create_checkout_session(request):
     return redirect(checkout_session.url, code=303)
 
 
-def cancel(request):
+def cancel():
     return redirect(reverse('shopping_cart'))
-
 
 
 def success(request):
@@ -78,16 +78,15 @@ def success(request):
 
 @csrf_exempt
 def stripe_webhook(request):
-    """ Webhook handler from stripe docs """
     payload = request.body
     event = None
 
     try:
         event = stripe.Event.construct_from(
-            json.loads(payload), stripe.api_key
+        json.loads(payload), stripe.api_key
         )
     except ValueError as e:
-    # Invalid payload
+        # Invalid payload
         return HttpResponse(status=400)
 
     # Handle the event

@@ -4,6 +4,9 @@
 
 ## User Story Testing
 
+## Stripe CLI
+
+ The Stripe CLI was used to test the webhook handling. The exact methods of testing were found in the [Stripe Documentation](https://stripe.com/docs/payments/handling-payment-events#use-cli) and were followed precisely to ensure that the handler worked as intended. 
 
 
 ## Bugs
@@ -87,5 +90,10 @@ def create_checkout_session(request):
 ```
 
 With this code, the Stripe checkout page displays the checkout for all the items in the cart. 
+</details>
+
+<details>
+ <summary>3. Stripe: HTTP 500 (Internal Server Error) when locally testing webhooks.</summary>
+    The solution for this was quite easy as it was simply a matter of adding a trailing '/' to the webhook url 
 </details>
 
