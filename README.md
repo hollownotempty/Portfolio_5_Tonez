@@ -27,9 +27,10 @@
 ## Strategy
 
 ### Project Goals
+   Tonez is built to sell royalty free sounds in sample packs that people can purchase and use in their music, movies, tv shows, podcasts or any other audio based project. Any packs purchased can then be re-downloaded by the user from their profile page.
 
 ### User Goals
-
+   Any user coming to Tonez will be looking for inspiration for their project or to find a specific sound they are looking for to use in their projects. On Tonez they will be able to browse for sounds by category or just have a look at what is available and find something that might be useful. Once they purchase a pack it will be on their profile for them to redownload at any time, so they don't need to worry about it taking up space on their hard-drive if they don't use it very often. 
 
 ## Structure
 
@@ -74,6 +75,7 @@ The wireframes for this project can be viewed [here](#)
    2. Gitpod - Cloud based IDE used for development
    3. Heroku - Cloud platform used to host app
    4. [unsplash](https://www.unsplash.com/) - Stock image site used to source images
+   5. [Stripe](https://www.stripe.com/) - Financial software used to process payments
 
 ## Validation 
 All validations passed with no errors (except for HTML, which had non important errors thrown by the django template language that were ignored)
@@ -122,5 +124,7 @@ These are the steps used to deploy this application to Heroku:
 ## Credits
 
 ### Coding tips and tricks
+
+1. I had help with Stripe webhooks from the official [Stripe Youtube Channel](https://www.youtube.com/watch?v=oYSLhriIZaA&t=254s)
 
 ### Acknowledgments
