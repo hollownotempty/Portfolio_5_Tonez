@@ -11,6 +11,8 @@ def cart_contents(request):
     discount_percentage = 0
     cart = request.session.get('cart', {})
 
+    
+
     for item_id, quantity in cart.items():
         pack = get_object_or_404(Packs, pk=item_id)
         total += pack.price

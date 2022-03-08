@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-
+from checkout.models import Order
 
 class StripeWhHandler:
     """
@@ -18,7 +18,7 @@ class StripeWhHandler:
             status=200
         )
 
-    def handle_payment_intent_succeeded(self,event):
+    def handle_checkout_session_succeeded(self,event):
         """
         Handle the payment_intent_succeeded webhook event
         """
@@ -37,4 +37,3 @@ class StripeWhHandler:
             content=f'Webhook received: {event["type"]}',
             status=200
         )
-

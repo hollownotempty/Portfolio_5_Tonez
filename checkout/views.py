@@ -46,18 +46,18 @@ def create_checkout_session(request):
             'phone_number': request.POST['phone_number'],
         }
 
-        order_form = OrderForm(form_data)
-        if order_form.is_valid():
-            order = order_form.save(commit=False)
-            order.save()
-            for item_id, item_data in cart.items():
-                product = Packs.objects.get(id=item_id)
-                if isinstance(item_data, int):
-                    order_line_item = OrderLineItem(
-                        order=order,
-                        product=product,
-                    )
-                    order_line_item.save()
+        # order_form = OrderForm(form_data)
+        # if order_form.is_valid():
+        #     order = order_form.save(commit=False)
+        #     order.save()
+        #     for item_id, item_data in cart.items():
+        #         product = Packs.objects.get(id=item_id)
+        #         if isinstance(item_data, int):
+        #             order_line_item = OrderLineItem(
+        #                 order=order,
+        #                 product=product,
+        #             )
+        #             order_line_item.save()
 
     YOUR_DOMAIN = 'http://localhost:8000/'
 
@@ -82,7 +82,7 @@ def create_checkout_session(request):
         cancel_url=YOUR_DOMAIN + 'checkout/cancel/',
     )
 
-    request.session['order_number'] = order.order_number
+    # request.session['order_number'] = order.order_number
 
     return redirect(checkout_session.url, code=303)
 
