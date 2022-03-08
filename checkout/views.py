@@ -78,6 +78,7 @@ def create_checkout_session(request):
     checkout_session = stripe.checkout.Session.create(
         line_items=line_items,
         mode='payment',
+        allow_promotion_codes=True,
         success_url=YOUR_DOMAIN + 'checkout/success/',
         cancel_url=YOUR_DOMAIN + 'checkout/cancel/',
     )
