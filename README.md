@@ -125,6 +125,7 @@ These are the steps used to deploy this application to Heroku:
 
 ### Coding tips and tricks
 
-1. I had help with Stripe webhooks from the official [Stripe Youtube Channel](https://www.youtube.com/watch?v=oYSLhriIZaA&t=254s)
+1. I had help with Stripe webhooks from the official [Stripe Youtube Channel](https://www.youtube.com/watch?v=oYSLhriIZaA&t=254s).
+2. 
 
 ### Acknowledgments
