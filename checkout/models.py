@@ -5,12 +5,14 @@ from django.db.models import Sum
 from django.conf import settings
 
 from store.models import Packs
+from profiles.models import UserProfile
 
 # Create your models here.
 
 class Order(models.Model):
     """ Order Model """
     order_number = models.CharField(max_length=32, null=False, editable=False)
+    user_profle = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name='Orders')
     full_name = models.CharField(max_length=58, null=False, blank=False)
     email = models.EmailField(max_length= 254, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)
