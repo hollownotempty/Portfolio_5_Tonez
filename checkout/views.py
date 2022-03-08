@@ -37,6 +37,27 @@ def checkout(request):
 
 def create_checkout_session(request):
     """ Create checkout session Stripe """
+    if request.method == 'POST':
+        cart = request.session.get('cart', {})
+
+        form_data = {
+            'full_name': request.POST['full_name'],
+            'email': request.POST['email'],
+            'phone_number': request.POST['phone_number'],
+        }
+
+        order_form = OrderForm(form_data)
+        if order_form.is_valid():
+            order = order_form.save(commit=False)
+            order.save()
+            for item_id, item_data in cart.items():
+                product = Packs.objects.get(id=item_id)
+                if isinstance(item_data, int):
+                    order_line_item = OrderLineItem(
+                        order=order,
+                        product=product,
+                    )
+                    order_line_item.save()
 
     YOUR_DOMAIN = 'http://localhost:8000/'
 
@@ -46,7 +67,7 @@ def create_checkout_session(request):
 
     for item_id, quantity in cart.items():
         pack = get_object_or_404(Packs, pk=item_id)
-        stripe_price_id = pack.stripe_price_id
+        stripe_price_id = pack.stripe_price_id 
         pd = {
             'price': stripe_price_id,
             'quantity': quantity,

@@ -56,6 +56,9 @@
             <div class="submit-button text-right mt-5 mb-2">
                 <form action="{% url 'create_checkout_session' %}" method="POST">
                     {% csrf_token %}
+                    {{ order_form.full_name | as_crispy_field }}
+                    {{ order_form.email | as_crispy_field }}
+                    {{ order_form.phone_number | as_crispy_field }}
                     <a href="{% url 'shopping_cart' %}" class="btn btn-light rounded-0 btn-lg">
                         <span class="icon">
                             <i class="fas fa-chevron-left"></i>
