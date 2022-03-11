@@ -6,7 +6,7 @@ from django.dispatch import receiver
 # Create your models here.
 class UserProfile(models.Model):
     """
-    A user model
+    A user profile  model
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
@@ -22,3 +22,5 @@ def create_user_profile(sender, instance, created, **kwargs):
     if created:
         UserProfile.objects.create(user=instance)
     instance.userprofile.save()
+
+   

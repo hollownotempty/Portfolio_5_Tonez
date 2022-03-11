@@ -2,6 +2,11 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.conf import settings
 
+from checkout.models import Order, OrderLineItem
+from store.models import Packs
+from profiles.models import UserProfile
+from .forms import OrderForm
+
 import json
 import stripe
 
@@ -37,25 +42,6 @@ def create_checkout_session(request):
     if request.method == 'POST':
         cart = request.session.get('cart', {})
 
-        # form_data = {
-        #     'full_name': request.POST['full_name'],
-        #     'email': request.POST['email'],
-        #     'phone_number': request.POST['phone_number'],
-        # }
-
-        # order_form = OrderForm(form_data)
-        # if order_form.is_valid():
-        #     order = order_form.save(commit=False)
-        #     order.save()
-        #     for item_id, item_data in cart.items():
-        #         product = Packs.objects.get(id=item_id)
-        #         if isinstance(item_data, int):
-        #             order_line_item = OrderLineItem(
-        #                 order=order,
-        #                 product=product,
-        #             )
-        #             order_line_item.save()
-
     YOUR_DOMAIN = 'http://localhost:8000/'
 
     cart = request.session.get('cart', {})
@@ -72,15 +58,19 @@ def create_checkout_session(request):
         
         line_items.append(pd)
 
+    request.session['full_name'] = request.POST['full_name']
+    request.session['email'] = request.POST['email']
+    request.session['phone_number'] = request.POST['phone_number']
+
     checkout_session = stripe.checkout.Session.create(
         line_items=line_items,
         mode='payment',
-        metadata={
-            'full_name': request.POST['full_name'],
-            'email': request.POST['email'],
-            'phone_number': request.POST['phone_number'],
-            'cart': json.dumps(request.session.get('cart', {}))
-        },
+        # metadata={
+        #     'full_name': request.POST['full_name'],
+        #     'email': request.POST['email'],
+        #     'phone_number': request.POST['phone_number'],
+        #     'cart': json.dumps(request.session.get('cart', {}))
+        # },
         allow_promotion_codes=True,
         success_url=YOUR_DOMAIN + 'checkout/success/',
         cancel_url=YOUR_DOMAIN + 'checkout/cancel/',
@@ -97,6 +87,34 @@ def cancel(request):
 
 
 def success(request):
+    """
+    View to return the success page after a purchase has gone through
+    """
+
+    cart = json.dumps(request.session.get('cart', {}))
+    form_data = {
+            'full_name': request.session['full_name'],
+            'email': request.session['email'],
+            'phone_number': request.session['phone_number'],
+        }
+
+    order_form = OrderForm(form_data)
+
+    if order_form.is_valid():
+            order = order_form.save(commit=False)
+            order.save()
+            for item_id, item_data in json.loads(cart).items():
+                    product = Packs.objects.get(id=item_id)
+                    if isinstance(item_data, int):
+                        order_line_item = OrderLineItem(
+                            order=order,
+                            product=product,
+                        )
+                        order_line_item.save()
+
+    profile = UserProfile.objects.get(user=request.user)
+    order.user_profile = profile
+    order.save()
 
     if 'cart' in request.session:
         del request.session['cart']
