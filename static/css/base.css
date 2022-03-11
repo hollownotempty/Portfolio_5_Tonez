@@ -246,27 +246,3 @@ footer a {
 #success-page-container {
     margin-top: 110px;
 }
-
-/* ------------------------- Login Page */
-
-
-#allauth-container {
-    margin-top: 110px;
-}
-
-#allauth-container p {
-    margin-top: 1.5rem;
-}
-
-#allauth-container label:not([for='id remember']){
-    display: none;
-}
-
-#allauth-container a{
-    font-family: 'Roboto', sans-serif;
-}
-
-#allauth-container p a {
-    color: black;
-    text-decoration: underline;
-}
