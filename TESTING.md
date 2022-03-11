@@ -97,3 +97,8 @@ With this code, the Stripe checkout page displays the checkout for all the items
     The solution for this was quite easy as it was simply a matter of adding a trailing '/' to the webhook url 
 </details>
 
+<details>
+ <summary>4. Programming Error with database when trying to view orders in admin panel.</summary>
+    From digging around on the internet, I believe this was an issue with my database that I couldn't quite pin point, so to solve the problem I flushed my database out and migrated it again. This fixed the issue but unfortunately deleted my superusers and product info so I had to re-make them. 
+</details>
+
