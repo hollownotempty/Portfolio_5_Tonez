@@ -99,28 +99,25 @@
 
       </div>
 
-      <div id="sidebar-mobile" class="col-2 bg-black text-light sticky-top text-center d-md-none">
+      <div id="sidebar-mobile" class="collapse collapse-horizontal bg-black text-light sticky-top text-center d-md-none">
         <div id="main-nav" class="row">
-          <div class="align-middle">
-            <h1 id="logo" class="display-1 my-2">Tz</h1>
-          </div>
+          <!-- <a data-bs-toggle="collapse" href="#sidebar-mobile" role="button" aria-expanded="true" aria-controls="sidebar-mobile">
+            <i class="fas fa-times"></i>
+          </a> -->
           <ul class="nav flex-column nav-fill">
+
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'home' %}"><i class="fas fa-home"></i></a>
+              <a class="nav-link w-50" href="{% url 'home' %}"><i class="fas fa-home"></i></a>
             </li>
-            <hr>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'profile' %}"><i class="fas fa-user"></i></a>
+              <a class="nav-link w-50" href="{% url 'profile' %}"><i class="fas fa-user"></i></a>
             </li>
-            <hr>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'packs' %}"><i class="fas fa-music"></i></a>
+              <a class="nav-link w-50" href="{% url 'packs' %}"><i class="fas fa-music"></i></a>
             </li>
-            <hr>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'contact' %}"><i class="fas fa-envelope"></i></a>
+              <a class="nav-link w-50" href="{% url 'contact' %}"><i class="fas fa-envelope"></i></a>
             </li>
-            <hr>
 
             <li class="nav-item">
               <a href="{% url 'shopping_cart' %}">
@@ -134,11 +131,29 @@
                 </p>
               </a>
             </li>
+
+            <li class="nav-item">
+              <a data-bs-toggle="collapse" href=".collapse" role="button" aria-expanded="true" aria-controls="collapse">
+                <i class="fas fa-times"></i>
+              </a>            
+            </li>
           </ul>
         </div>
+        <footer class="row sticky-bottom">
+          <ul class="list-inline my-2">
+            <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+          <p><small>Copyright Tonez 2022 &#169;</small></p>
+        </footer>
       </div>
 
       <div id="page-content" class="col">
+
+        <a id="hamburger-menu" class="d-md-none text-black" data-bs-toggle="collapse" href=".collapse" role="button" aria-expanded="false" aria-controls="collapse">
+          <i class="fas fa-bars"></i>
+        </a>
 
         {% if messages %}
         <div>
