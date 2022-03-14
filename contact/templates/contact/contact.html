@@ -1,10 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_title %}| Packs{% endblock %}
+{% block extra_title %}| Contact{% endblock %}
 {% block content %}
-
-<div class="mx-3 contact-margin">
+<div id="content-container" class="container">
     <h2>Get in contact:</h2>
     <form action="{% url 'contact' %}" class="form" method="POST">
         {% csrf_token %}

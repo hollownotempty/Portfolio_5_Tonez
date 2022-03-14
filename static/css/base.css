@@ -36,8 +36,7 @@ h4 {
     font-size: 30px;
 }
 
-.nav-link,
-a {
+.nav-link {
     font-family: 'Bebas Neue', sans-serif;
     color: white;
     text-decoration: none;
@@ -84,6 +83,16 @@ footer a {
     background-color: #fafafa;
     padding: 0;
 }
+
+#content-container {
+    margin-top: 110px;
+}
+
+@media screen and (max-width: 768px) {
+    #content-container {
+        margin-top: 48px;
+    }
+  }
 
 .card {
     /* background-color: #fff; */
@@ -188,8 +197,6 @@ footer a {
     top: 0;
     width: 80%;
 }
-#
-
 
 /* ------------------------- Pack Display */
 
@@ -197,9 +204,6 @@ footer a {
     border: solid 1px black;
 }
 
-.packs-all {
-    margin-top: 110px;
-}
 
 .pack-details-card a {
     font-family: 'Roboto', sans-serif;
@@ -293,4 +297,14 @@ footer a {
     text-decoration: underline;
     cursor: pointer;
     font-family: 'Roboto', sans-serif;
+}
+
+/* ------------------------- Profile Page */
+
+#profile-container {
+    margin-top: 110px;
+}
+
+.order-history table a {
+    color: black;
 }

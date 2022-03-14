@@ -3,7 +3,7 @@
 
 {% block extra_title %}| {{ pack.name }}{% endblock %}
 {% block content %}
-
+<div id="content-container" class="container">
     <div class="container-fluid">
         <div class="row pack-detail-margin">
             <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
@@ -37,5 +37,6 @@
     <div id="demo-player" class="container my-3">
         {{ pack.demo_link | safe }}
     </div>
+</div>
 
 {% endblock %}

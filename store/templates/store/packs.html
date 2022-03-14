@@ -3,8 +3,14 @@
 
 {% block extra_title %}| Packs{% endblock %}
 {% block content %}
+<div id="content-container" class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="mb-4 display-3">My Profile</h2>
+        </div>
+    </div>
 
-    <div class="row mx-5 packs-all">
+    <div class="row">
         {% for pack in packs %}
             <div class="col-sm-6 col-md-6 col-lg-3 col-xl-4">
                 <div class="card h-100 border-0">
@@ -30,5 +36,5 @@
             </div>
         {% endfor %}
     </div>
-
+</div>
 {% endblock %}

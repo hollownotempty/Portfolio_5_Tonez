@@ -5,13 +5,12 @@
     <link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}">
 {% endblock %}
 
-{% block extra_title %}| Shopping Cart{% endblock %}
+{% block extra_title %}| {{ user.username }}{% endblock %}
 {% block content %}
-
-<div id="profile-container" class="mb-2 mx-5">
+<div id="content-container" class="container">
     <div class="row">
         <div class="col">
-            <h2 class="mb-4">My Profile</h2>
+            <h2 class="mb-4 display-3">My Profile</h2>
         </div>
     </div>
     <div class="row">
@@ -50,8 +49,6 @@
         </div>
     </div>
 </div>
-
-
 
 {% endblock %}
  
