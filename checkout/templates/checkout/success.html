@@ -5,21 +5,45 @@
 {% block content %}
 
 <div id="content-container" class="container">
-    <div class="success-inner">
-            <h1>
-                Order Placed Successfully!
+    <div class="success-inner text-center">
+        {% if from_profile %}
+            <h1 class="display-2">
+                Order Information
             </h1>
 
             <p>
-                Thank you for your order, your order number is {{order.order_number}}. You should receive an email with your product soon.
+                This is a past confirmation for {{order.order_number}}.
             </p>
-            <h2>
+            <h2 class="display-3">
                 Downloads:
             </h2>
             <ul class="list-unstyled">
                 {% for item in order.lineitems.all %}
                     <li class="small">
-                        <a href="{{ item.product.file.url }}" class="download-link text-black" download>{{ item.product.name }}</a>
+                        <a href="{{ item.product.file.url }}" class="download-link text-black" download>{{ item.product.name }} <i class="fas fa-download"></i></a>
+                    </li>
+                {% endfor %}
+            <a href="{% url 'profile' %}" class="btn btn-light rounded-0 btn-lg">
+                <span class="icon">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span class="text-uppercase">Back to Profile</span>
+            </a>
+        {% else %}
+            <h1 class="display-2">
+                Order Placed Successfully!
+            </h1>
+
+            <p>
+                Thank you for your order, your order number is {{order.order_number}}.
+            </p>
+            <h2 class="display-3">
+                Downloads:
+            </h2>
+            <ul class="list-unstyled">
+                {% for item in order.lineitems.all %}
+                    <li class="small">
+                        <a href="{{ item.product.file.url }}" class="download-link text-black" download>{{ item.product.name }} <i class="fas fa-download"></i></a>
                     </li>
                 {% endfor %}
             <a href="{% url 'home' %}" class="btn btn-light rounded-0 btn-lg">
@@ -28,6 +52,7 @@
                 </span>
                 <span class="text-uppercase">Back to Home</span>
             </a>
+        {% endif %}
     </div>
 </div>
 
