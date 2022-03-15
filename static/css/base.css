@@ -12,6 +12,11 @@ h4 {
     font-family: 'Bebas Neue', sans-serif;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
+
 /* ------------------- Side Bar */
 
 #sidebar,
@@ -41,6 +46,8 @@ h4 {
     color: white;
     text-decoration: none;
 }
+
+
 
 a:hover {
     color: white;
@@ -82,6 +89,7 @@ footer a {
 #page-content {
     background-color: #fafafa;
     padding: 0;
+    position: relative;
 }
 
 #content-container {
@@ -92,7 +100,7 @@ footer a {
     #content-container {
         margin-top: 48px;
     }
-  }
+}
 
 .card {
     /* background-color: #fff; */
@@ -157,6 +165,12 @@ footer a {
     -webkit-text-stroke: 1px black;
 }
 
+.message-container {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}
+
 /* ------------------------- Carousel */
 
 .carousel-item{
@@ -188,6 +202,21 @@ footer a {
     background-size: cover;
 }
 
+.shop-now-btn {
+    position: fixed;
+    bottom: 10%;
+    left: 50%;
+}
+
+.shop-now-btn a {
+    font-family: 'Roboto', sans-serif;
+    -webkit-box-shadow: -1px 11px 12px -1px rgba(0,0,0,0.66); 
+    box-shadow: -1px 11px 12px -1px rgba(0,0,0,0.66);
+}
+
+.shop-now-btn a:hover {
+    opacity: .8;
+}
 
 /* ------------------------- Search Bar */
 
@@ -254,6 +283,10 @@ footer a {
 
 .contact-margin {
     margin-top: 90px;
+}
+
+.textarea {
+    height: 160px;
 }
 
 /* ------------------------- Success Page */
