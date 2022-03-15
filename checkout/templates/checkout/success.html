@@ -6,20 +6,6 @@
 
 <div id="content-container" class="container">
     <div class="success-inner">
-        {% if from_profile %}
-            <h1>
-                Order Summary: 
-            </h1>
-
-
-
-            <a href="{% url 'profile' %}" class="btn btn-light rounded-0 btn-lg">
-                <span class="icon">
-                    <i class="fas fa-chevron-left"></i>
-                </span>
-                <span class="text-uppercase">Back to Profile</span>
-            </a>
-        {% else %}
             <h1>
                 Order Placed Successfully!
             </h1>
@@ -42,7 +28,6 @@
                 </span>
                 <span class="text-uppercase">Back to Home</span>
             </a>
-        {% endif %}
     </div>
 </div>
 

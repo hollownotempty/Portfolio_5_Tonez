@@ -79,9 +79,10 @@ footer a {
 
 #hamburger-menu {
     font-size: 30px;
-    margin-left: 15px;
+    margin-left: 22px;
     position: absolute;
     z-index: 1000000;
+    margin-top: 11px;
 }
 
 /* ------------------- Content Section */
@@ -93,13 +94,17 @@ footer a {
 }
 
 #content-container {
-    margin-top: 110px;
+    margin-top: 74px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px){
     #content-container {
-        margin-top: 48px;
+        margin-top: 70px;
     }
+}
+
+#search-group {
+    margin-left: 70px;
 }
 
 .card {

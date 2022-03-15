@@ -1,3 +1,4 @@
+from asyncio.windows_events import NULL
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import ContactForm
@@ -13,8 +14,6 @@ def contact_page(request):
         form = ContactForm(request.POST)
         if form.is_valid:
             instance = form.save()
-            instance.user = request.user
-            instance.user_email = request.user.email
             instance.save()
             messages.success(request, 'Contact request submitted successfully.')
             return redirect('contact')

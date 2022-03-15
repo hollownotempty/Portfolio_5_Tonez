@@ -9,9 +9,9 @@ class ContactAdmin(admin.ModelAdmin):
     """
     model = ContactSubmission
 
-    fields = ('user', 'user_email', 'subject', 'message', 'responded_to')
+    fields = ('full_name', 'email', 'subject', 'message', 'responded_to')
 
-    readonly_fields = ('user', 'user_email')
+    readonly_fields = ('full_name', 'email', 'subject', 'message')
 
     order = ('-date',)
 
