@@ -102,3 +102,7 @@ With this code, the Stripe checkout page displays the checkout for all the items
     From digging around on the internet, I believe this was an issue with my database that I couldn't quite pin point, so to solve the problem I flushed my database out and migrated it again. This fixed the issue but unfortunately deleted my superusers and product info so I had to re-make them. 
 </details>
 
+<details>
+ <summary>5. Deployed app returning to incorrect site on payment success</summary>
+    I realised after deployment that the YOUR_DOMAIN variable was still returning to the local host. Once this was changed to the heroku domain, the site worked perfectly. 
+</details>

@@ -15,7 +15,7 @@ class StripeWhHandler:
         """
 
         return HttpResponse(
-            content=f'walalalalala: {event["type"]}',
+            content=f'Webhook Received: {event["type"]}',
             status=200
         )
 
@@ -23,25 +23,6 @@ class StripeWhHandler:
         """
         Handle the payment_intent_succeeded webhook event
         """
-
-        # md = event.data.object.metadata
-        # cart = event.data.object.metadata.cart
-
-        # order_form = OrderForm(form_data)
-
-        # if order_form.is_valid():
-        #     order = order_form.save(commit=False)
-        #     order.save()
-        #     for item_id, item_data in json.loads(cart).items():
-        #             product = Packs.objects.get(id=item_id)
-        #             if isinstance(item_data, int):
-        #                 order_line_item = OrderLineItem(
-        #                     order=order,
-        #                     product=product,
-        #                 )
-        #                 order_line_item.save()
-
-        
 
         return HttpResponse(
             content=f'Session Checkout Webhook received: {event["type"]}',
