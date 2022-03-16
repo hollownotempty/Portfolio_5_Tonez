@@ -52,7 +52,7 @@ The wireframes for this project can be viewed [here](#)
 ## Facebook
 A facebook business page was created for this assignment in accordance with the project requirements. The live page can be viewed [here](https://www.facebook.com/tonez.aiff/)
 
-![tonez_facebook](media\images\facebook_tonez_screenshot.png)
+![tonez_facebook](../Portfolio_5_Tonez/media/images/facebook_tonez_screenshot%20.png)
 
 ## User Stories
 

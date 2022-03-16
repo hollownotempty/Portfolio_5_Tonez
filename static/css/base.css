@@ -17,6 +17,10 @@ a {
     text-decoration: none;
 }
 
+.roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
 /* ------------------- Side Bar */
 
 #sidebar,
@@ -265,12 +269,6 @@ footer a {
 }
 
 /* ------------------------- Pack Detail Page */
-
-.pack-detail-margin {
-    margin-top: 110px;
-    margin-right: 0;
-}
-
 .pack-price {
     font-size: 30px;
 }

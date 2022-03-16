@@ -1,14 +1,16 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.db.models import Q
-from .models import Packs
+from .models import Packs, Categories
 # Create your views here.
 
 
 def packs(request):
-    # Return packs page
+    """
+    Return packs page
+    """
     packs = Packs.objects.all()
     query = None
-    category = None
+    categories = Categories.objects.all()
 
     if request.GET:
         if 'category' in request.GET:
@@ -27,6 +29,7 @@ def packs(request):
     context = {
         'packs': packs,
         'search_term': query,
+        'categories': categories,
     }
 
     return render(request, 'store/packs.html', context)
