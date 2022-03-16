@@ -34,16 +34,26 @@
 
 ## Structure
 
+### Common Elements
+There are some common elements across all pages on the site. These include the nav bar on the side of the screen, the search bar and the shopping cart. On the mobile version of the site, some of these elements collapse into the side menu. 
 
 ### Home
+This page features a sliding carousel of some of the currently available packs and a button to go directly to the packs page. 
 
 ### Login/Signup
+Simple login and signup layout page, powered by Django Allauth. 
 
 ### Packs Page
 
+This page uses django template logic to render all of the packs on the site into a scrollable view. From here packs can be clicked to open the pack detail page, or the pack category can be clicked to display all of the packs with the same category. Similary, any search queries that have been made with the search bar return this page with any packs that contain the query in either the title or the description. 
+
 ### Pack Detail Page
 
+The pack detail page features all the necessary information for the user. This includes the artwork, name, description, price and an 'add to cart' button. This page also features an embedded Soundcloud player with a demo of the pack. This is either a loop from the pack or a selection of sounds.
+
 ### Profile Page
+
+Seeing as this site doesn't have much in the way of a social aspect, I decided to use the profile page as a list of the users previous orders. From here they can also redownlaod any purchased packs from the list.
 
 ## Wireframes
 
@@ -60,7 +70,20 @@ A facebook business page was created for this assignment in accordance with the 
 
 ### Data Models
 
+There are multiple custom models for this project:
+
+1. Order - Orders made by customers
+2. OrderLineItem - The individual items within an order
+3. ContactSubmission - Any contact submissions made with the contact form are saved in this model
+4. UserProfile - The profile tied to an User, used to display any necessary information on the profile page
+5. Packs - Each individual pack falls into this model, containing all of the information for the store as well as the url for the downloadable file
+6. Categories - The categories associated with each pack
+
 ### User Interface
+
+The user interface for this site was styled using Bootstrap. From the beginning of the project I wanted to move away from the classic navbar at the top of the screen. This led to the sidebar with the changing content section on the right. For the notification system, I used django's messages framework and bootstrap's toasts functionality to display tasteful messages to the user when they interacted with the site. 
+
+Using Stripe's documentation I figured out how to redirect to their own built checkout page. This brings users to a fleshed out page to fulfill their orders and returns them to checkout success page where they can download their products at the end. 
 
 ## Technologies Used
 
