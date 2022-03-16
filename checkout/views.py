@@ -119,6 +119,8 @@ def success(request):
 
         del request.session['full_name'], request.session['email'], request.session['phone_number']
 
+        messages.success(request, "Order successfully processed!")
+
         return render(request, 'checkout/success.html', context)
     else:
         return redirect('home')
