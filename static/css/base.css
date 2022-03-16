@@ -199,6 +199,20 @@ footer a {
     background-image: url('../../media/images/mg_large.png');
 }
 
+@media screen and (max-width: 768px){
+    .item-1 {
+        background-image: url('../../media/images/fr_mobile.png');
+    }
+    
+    .item-2 {
+        background-image: url('../../media/images/hs_mobile.png');
+    }
+    
+    .item-3 {
+        background-image: url('../../media/images/mg_mobile.png');
+    }
+}
+
 .item-1,
 .item-2,
 .item-3 {
