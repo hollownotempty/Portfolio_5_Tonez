@@ -83,44 +83,41 @@ def success(request):
     """
     View to return the success page after a purchase has gone through
     """
-    if 'full_name' in request.session:
-        cart = json.dumps(request.session.get('cart', {}))
+    cart = json.dumps(request.session.get('cart', {}))
 
-        form_data = {
-                'full_name': request.session['full_name'],
-                'email': request.session['email'],
-                'phone_number': request.session['phone_number'],
-            }
-
-        order_form = OrderForm(form_data)
-
-        if order_form.is_valid():
-                order = order_form.save(commit=False)
-                order.save()
-                for item_id, item_data in json.loads(cart).items():
-                        product = Packs.objects.get(id=item_id)
-                        if isinstance(item_data, int):
-                            order_line_item = OrderLineItem(
-                                order=order,
-                                product=product,
-                            )
-                            order_line_item.save()
-
-        profile = UserProfile.objects.get(user=request.user)
-        order.user_profile = profile
-        order.save()
-
-        context = {
-            'order': order,
+    form_data = {
+            'full_name': request.session['full_name'],
+            'email': request.session['email'],
+            'phone_number': request.session['phone_number'],
         }
 
-        if 'cart' in request.session:
-            del request.session['cart']
+    order_form = OrderForm(form_data)
 
-        del request.session['full_name'], request.session['email'], request.session['phone_number']
+    if order_form.is_valid():
+            order = order_form.save(commit=False)
+            order.save()
+            for item_id, item_data in json.loads(cart).items():
+                    product = Packs.objects.get(id=item_id)
+                    if isinstance(item_data, int):
+                        order_line_item = OrderLineItem(
+                            order=order,
+                            product=product,
+                        )
+                        order_line_item.save()
 
-        messages.success(request, "Order successfully processed!")
+    profile = UserProfile.objects.get(user=request.user)
+    order.user_profile = profile
+    order.save()
 
-        return render(request, 'checkout/success.html', context)
-    else:
-        return redirect('home')
+    context = {
+        'order': order,
+    }
+
+    if 'cart' in request.session:
+        del request.session['cart']
+
+    del request.session['full_name'], request.session['email'], request.session['phone_number']
+
+    messages.success(request, "Order successfully processed!")
+
+    return render(request, 'checkout/success.html', context)
