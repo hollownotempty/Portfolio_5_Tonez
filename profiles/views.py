@@ -1,9 +1,5 @@
-from multiprocessing import context
-from re import template
 from django.shortcuts import render, get_object_or_404
-
 from checkout.models import Order
-
 from .models import UserProfile
 
 # Create your views here.
@@ -24,6 +20,9 @@ def profile_page(request):
 
 
 def order_history(request, order_number):
+    """
+    Display detailed page for order
+    """
     order = get_object_or_404(Order, order_number=order_number)
 
     template = 'checkout/success.html'

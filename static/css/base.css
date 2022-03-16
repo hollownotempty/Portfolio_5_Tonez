@@ -213,6 +213,12 @@ footer a {
     left: 50%;
 }
 
+@media screen and (max-width: 768px){
+    .shop-now-btn {
+        left: 38%;
+    }
+}
+
 .shop-now-btn a {
     font-family: 'Roboto', sans-serif;
     -webkit-box-shadow: -1px 11px 12px -1px rgba(0,0,0,0.66); 
