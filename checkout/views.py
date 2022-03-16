@@ -45,7 +45,7 @@ def create_checkout_session(request):
         request.session['email'] = request.POST['email']
         request.session['phone_number'] = request.POST['phone_number']
 
-    YOUR_DOMAIN = 'http://localhost:8000/'
+    YOUR_DOMAIN = 'https://portfolio-5-tonez.herokuapp.com/'
 
     cart = request.session.get('cart', {})
 
