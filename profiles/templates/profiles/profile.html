@@ -5,50 +5,62 @@
     <link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}">
 {% endblock %}
 
-{% block extra_title %}| {{ user.username }}{% endblock %}
+{% block extra_title %}| {% if user.is_authenticated %}{{ user.username }}{% else %}Please log in{% endif %}{% endblock %}
 {% block content %}
-<div id="content-container" class="container">
-    <div class="row">
-        <div class="col">
-            <h2 class="mb-4 display-3">My Profile</h2>
+{% if user.is_authenticated %}
+    <div id="content-container" class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="mb-4 display-3">My Profile</h2>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <h2>Order History:</h2>
-            <div class="order-history table-responsive">
-                <table class="table table-borderless">
-                    <thead>
-                        <th>Order Number</th>
-                        <th>Date</th>
-                        <th>Items</th>
-                        <th>Order Total</th>
-                    </thead>
-                    <tbody>
-                        {% for order in orders %}
-                        <tr>
-                            <td>
-                                <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}">{{ order.order_number|truncatechars:6 }}</a>
-                            </td>
-                            <td>{{ order.date }}</td>
-                            <td>
-                                <ul class="list-unstyled">
-                                    {% for item in order.lineitems.all %}
-                                    <li class="small">
-                                        <a href="{{ item.product.file.url }}" download>{{ item.product.name }}</a>
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                            </td>
-                            <td>{{ order.grand_total }}</td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+        <div class="row">
+            <div class="col">
+                <h2>Order History:</h2>
+                <div class="order-history table-responsive">
+                    <table class="table table-borderless">
+                        <thead>
+                            <th>Order Number</th>
+                            <th>Date</th>
+                            <th>Items</th>
+                            <th>Order Total</th>
+                        </thead>
+                        <tbody>
+                            {% for order in orders %}
+                            <tr>
+                                <td>
+                                    <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}">{{ order.order_number|truncatechars:6 }}</a>
+                                </td>
+                                <td>{{ order.date }}</td>
+                                <td>
+                                    <ul class="list-unstyled">
+                                        {% for item in order.lineitems.all %}
+                                        <li class="small">
+                                            <a href="{{ item.product.file.url }}" download>{{ item.product.name }}</a>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </td>
+                                <td>{{ order.grand_total }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
+{% else %}
+<div id="content-container" class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="mb-4 display-3">You are not logged in!</h2>
+        </div>
+    </div>
+    <div class="row">
+        <p>Please <a href="{% url 'account_login' %}" class="text-dark roboto text-underline">Login or Signup</a> to access your account.</p>
+    </div>
 </div>
-
+{% endif %}
 {% endblock %}
  

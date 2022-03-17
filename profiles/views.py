@@ -8,8 +8,11 @@ def profile_page(request):
     """
     Display the currently logged in user's profile
     """
-    profile = get_object_or_404(UserProfile, user=request.user)
-    orders = profile.orders.all()
+    profile = None
+    orders = None
+    if request.user.is_authenticated:
+        profile = get_object_or_404(UserProfile, user=request.user)
+        orders = profile.orders.all()
     template = 'profiles/profile.html'
     context = {
         'profile': profile,
