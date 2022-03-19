@@ -11,7 +11,6 @@
 
 ## Bugs
 
-![cart_render_type_error](#)
 <details>
  <summary>1. TypeError found when trying to render cart items in the cart</summary>
  This was fixed by introducing the quantity variable to the for loop. 
@@ -107,8 +106,14 @@ With this code, the Stripe checkout page displays the checkout for all the items
     I realised after deployment that the YOUR_DOMAIN variable was still returning to the local host. Once this was changed to the heroku domain, the site worked perfectly. 
 </details>
 
+
 <details>
- <summary>6. Add Product form returning a ValueError when trying to submit a new product.</summary>
+ <summary>6. Add product form not validating properly.</summary>
+    The view for adding a product was using `form.save` and not `form.save()`, causing it not to validate properly.
+</details>
+
+<details>
+ <summary>7. Add product form not posting and leaving 'Field required' warnings next to image and file field.</summary>
     This was fixed by adding the enctype to the form element. 
 
 ```
