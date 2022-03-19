@@ -30,3 +30,7 @@ def add_product(request):
     }
 
     return render(request, 'site_admin/add_product.html', context)
+
+
+def remove_product(request):
+    return render(request, 'site_admin/remove_product.html')
