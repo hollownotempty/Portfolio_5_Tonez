@@ -4,11 +4,14 @@ from django.db import models
 
 
 class Categories(models.Model):
+    """
+    Categories model
+    """
     name = models.CharField(max_length=120)
     friendly_name = models.CharField(max_length=120)
 
     def __str__(self):
-        return self.friendly_name
+        return f"{self.friendly_name}"
 
 
 class Packs(models.Model):
@@ -17,10 +20,10 @@ class Packs(models.Model):
     category = models.ForeignKey(Categories, on_delete=models.DO_NOTHING)
     price = models.DecimalField(max_digits=4, decimal_places=2)
     description = models.TextField(max_length=500)
-    image = models.ImageField(null=False, blank=False, upload_to="uploads/products/")
+    image = models.ImageField(null=False, blank=False, upload_to="uploads/images/")
     file = models.FileField(upload_to="uploads/files/")
     demo_link = models.TextField(max_length=1000)
     stripe_price_id = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.name
+        return f"{self.name}"

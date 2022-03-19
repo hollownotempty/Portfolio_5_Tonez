@@ -103,6 +103,19 @@ With this code, the Stripe checkout page displays the checkout for all the items
 </details>
 
 <details>
- <summary>5. Deployed app returning to incorrect site on payment success</summary>
+ <summary>5. Deployed app returning to incorrect site on payment success.</summary>
     I realised after deployment that the YOUR_DOMAIN variable was still returning to the local host. Once this was changed to the heroku domain, the site worked perfectly. 
+</details>
+
+<details>
+ <summary>6. Add Product form returning a ValueError when trying to submit a new product.</summary>
+    This was fixed by adding the enctype to the form element. 
+
+```
+<form action="{% url 'add_product' %}" class="form" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-dark mt-3">Add Product</button>
+        </form>
+```
 </details>

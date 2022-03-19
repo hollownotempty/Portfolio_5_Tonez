@@ -49,18 +49,23 @@
                 </div>
             </div>
         </div>
-    </div>
-{% else %}
-<div id="content-container" class="container">
-    <div class="row">
-        <div class="col">
-            <h2 class="mb-4 display-3">You are not logged in!</h2>
+        <div class="row">
+            <div class="col">
+                <a class="btn btn-alert" href="{% url 'site_admin' %}">Admin Panel</a>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <p>Please <a href="{% url 'account_login' %}" class="text-dark roboto text-underline">Login or Signup</a> to access your account.</p>
+{% else %}
+    <div id="content-container" class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="mb-4 display-3">You are not logged in!</h2>
+            </div>
+        </div>
+        <div class="row">
+            <p>Please <a href="{% url 'account_login' %}" class="text-dark roboto text-underline">Login or Signup</a> to access your account.</p>
+        </div>
     </div>
-</div>
 {% endif %}
 {% endblock %}
  

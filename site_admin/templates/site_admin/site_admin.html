@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}">
+{% endblock %}
+
+{% block extra_title %}| Site Admin{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+    <div id="content-container" class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="mb-4 display-3">Site Admin:</h2>
+            </div>
+        </div>
+        <div class="row">
+            <h4>Products:</h4>
+            <ul class="list-group">
+                <li class="list-group-item"><a href="{% url 'add_product' %}" class="text-black roboto">Add Product <i class="fas fa-plus"></i></a></li>
+                <li class="list-group-item"><a href="#" class="text-black roboto">Remove Product <i class="fas fa-minus"></i></a></li>
+            </ul>
+        </div>
+    </div>
+{% else %}
+    <div id="content-container" class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="mb-4 display-3">Access Denied</h2>
+            </div>
+        </div>
+        <div class="row">
+            <p>You have insufficient privileges to access this page.</p>
+            <a href="{% url 'home' %}" class="btn btn-light rounded-0 btn-lg">
+                <span class="icon">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span class="text-uppercase">Back to Home</span>
+            </a>
+        </div>
+    </div>
+{% endif %}
+{% endblock %}
+ 
