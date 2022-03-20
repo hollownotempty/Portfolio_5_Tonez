@@ -55,9 +55,14 @@ The pack detail page features all the necessary information for the user. This i
 
 Seeing as this site doesn't have much in the way of a social aspect, I decided to use the profile page as a list of the users previous orders. From here they can also redownlaod any purchased packs from the list.
 
+### Admin Panel
+
+The admin panel can be accessed through the profile page of any superuser on the site. From here you can add, remove or update any product for the site.
+
+
 ## Wireframes
 
-The wireframes for this project can be viewed [here](#)
+The basic wireframes for this project can be viewed [here](#)
 
 ## Facebook
 A facebook business page was created for this assignment in accordance with the project requirements. The live page can be viewed [here](https://www.facebook.com/tonez.aiff/)
