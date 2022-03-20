@@ -1,7 +1,9 @@
+from multiprocessing import context
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import AddProductForm
 from store.models import Packs
+from contact.models import ContactSubmission
 
 # Create your views here.
 
@@ -82,3 +84,22 @@ def update_product_detail(request, product_id):
         'form': form,
     }
     return render(request, 'site_admin/update_product_detail.html', context)
+
+
+def contact_submissions(request):
+    submissions = ContactSubmission.objects.all()
+
+    context = {
+        'submissions': submissions,
+    }
+    return render(request, 'site_admin/contact_submissions.html', context)
+
+
+def contact_submission_detail(request, submission_id):
+    submission = ContactSubmission.objects.get(pk=submission_id)
+
+    context ={
+        'submission': submission,
+    }
+    return render(request, 'site_admin/contact_submission_detail.html', context)
+
