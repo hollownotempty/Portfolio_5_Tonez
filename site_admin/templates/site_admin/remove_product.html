@@ -14,7 +14,21 @@
         </div>
     </div>
     <div class="row">
+        <h4>
+            Select product:
+        </h4>
+        <ul class="list-group">
+            {% for pack in packs %}
+                <li class="list-group-item"><a href="{% url 'delete_product' pack.id %}" class="text-black roboto" onclick="return confirm('Are you sure you want to delete {{ pack.name }}?')">{{ pack.name }} <i class="fas fa-trash-alt"></i></a></li>
+            {% endfor %}
+        </ul>
     </div>
+    <span class="my-3">
+        <a href="{% url 'site_admin' %}" class="text-dark">
+            <i class="fas fa-chevron-left"></i>
+            <span class="roboto">Back to Admin Panel</span>
+        </a>
+    </span>
 </div>
 {% endblock %}
  

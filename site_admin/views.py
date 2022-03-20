@@ -1,6 +1,8 @@
+from email import message
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import AddProductForm
+from store.models import Packs
 
 # Create your views here.
 
@@ -33,4 +35,21 @@ def add_product(request):
 
 
 def remove_product(request):
-    return render(request, 'site_admin/remove_product.html')
+    """
+    Returns the remove product menu
+    """
+    packs = Packs.objects.all()
+    context = {
+        'packs': packs,
+    }
+    return render(request, 'site_admin/remove_product.html', context)
+
+
+def delete_product(request, product_id):
+    """
+    Deletes product from database
+    """
+    product = Packs.objects.get(pk=product_id)
+    product.delete()
+    messages.success(request, 'Successfully deleted product!')
+    return redirect('remove_product')
