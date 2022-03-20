@@ -22,7 +22,11 @@
         {% if submission.responded_to %}
             <p><strong>You have replied to this message.</strong></p>
         {% else %}
-            <p><strong>You have to reply to this message.</strong></p>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-dark mt-3">Send Reply</button>
+            </form>
         {% endif %}
     </div>
 </div>

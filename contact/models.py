@@ -1,3 +1,4 @@
+from email import message
 from django.db import models
 from django.conf import settings
 
@@ -15,3 +16,11 @@ class ContactSubmission(models.Model):
 
     def __str__(self):
         return f'From {self.full_name} on {self.submitted_on}'
+
+
+class ContactReply(models.Model):
+    """
+    Replies sent to contact submissions
+    """
+    submission = models.ForeignKey(ContactSubmission, on_delete=models.CASCADE, blank=True, null=True)
+    message = models.TextField(max_length=300, blank=False, null=False)

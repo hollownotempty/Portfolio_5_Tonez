@@ -1,7 +1,8 @@
-from multiprocessing import context
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.core.mail import send_mail, BadHeaderError
 from .forms import AddProductForm
+from contact.forms import ReplyForm
 from store.models import Packs
 from contact.models import ContactSubmission
 
@@ -96,10 +97,23 @@ def contact_submissions(request):
 
 
 def contact_submission_detail(request, submission_id):
+    """
+    Details of contact submission and reply form
+    """
     submission = ContactSubmission.objects.get(pk=submission_id)
+    form = ReplyForm()
+
+    if request.method == 'POST':
+        form = ReplyForm(request.POST)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.submission = submission
+            instance.save()
+            submission.responded_to = True
+            submission.save()
 
     context ={
         'submission': submission,
+        'form': form,
     }
     return render(request, 'site_admin/contact_submission_detail.html', context)
-
