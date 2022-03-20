@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.core.mail import send_mail, BadHeaderError
+from django.core.mail import send_mail
+from django.conf import settings
 from .forms import AddProductForm
 from contact.forms import ReplyForm
 from store.models import Packs
@@ -111,7 +112,10 @@ def contact_submission_detail(request, submission_id):
             instance.save()
             submission.responded_to = True
             submission.save()
-            
+        subject = f"Re: {submission.subject}"
+        message = instance.message
+        send_mail(subject, message, settings.EMAIL_HOST_USER, [submission.email,])
+
 
     context ={
         'submission': submission,
