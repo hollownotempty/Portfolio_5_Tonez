@@ -111,6 +111,7 @@ def contact_submission_detail(request, submission_id):
             instance.save()
             submission.responded_to = True
             submission.save()
+            
 
     context ={
         'submission': submission,
