@@ -1,4 +1,3 @@
-from email import message
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import AddProductForm
@@ -53,3 +52,33 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Successfully deleted product!')
     return redirect('remove_product')
+
+
+def update_product(request):
+    """
+    Returns the update item menu
+    """
+    packs = Packs.objects.all()
+    context = {
+        'packs': packs,
+    }
+    return render(request, 'site_admin/update_product.html', context)
+
+
+def update_product_detail(request, product_id):
+    """
+    Returns the individual page to update an item
+    """
+    product = Packs.objects.get(pk=product_id)
+    form = AddProductForm(request.POST or None, instance=product)
+
+    if form.is_valid():
+        form.save()
+        messages.success(request, f'Successfully updated {product.name}.')
+        return redirect('update_product')
+
+    context = {
+        'product': product,
+        'form': form,
+    }
+    return render(request, 'site_admin/update_product_detail.html', context)
