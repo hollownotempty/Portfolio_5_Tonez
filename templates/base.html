@@ -70,6 +70,11 @@
               <a class="nav-link" href="{% url 'account_login' %}">Login</a>
               {% endif %}
             </li>
+            {% if user.is_superuser %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'site_admin' %}">Admin</a>
+            </li>
+            {% endif %}
           </ul>
           <hr>
         </div>

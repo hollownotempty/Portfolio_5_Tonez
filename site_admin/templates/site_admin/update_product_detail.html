@@ -7,6 +7,8 @@
 
 {% block extra_title %}| Update Product{% endblock %}
 {% block content %}
+{% if user.is_superuser %}
+
 <div id="content-container" class="container">
     <div class="row">
         <div class="col">
@@ -19,5 +21,23 @@
         <button type="submit" class="btn btn-dark mt-3">Update Product</button>
     </form>
 </div>
+{% else %}
+    <div id="content-container" class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="mb-4 display-3">Access Denied</h2>
+            </div>
+        </div>
+        <div class="row">
+            <p>You have insufficient privileges to access this page.</p>
+            <a href="{% url 'home' %}" class="btn btn-light rounded-0 btn-lg">
+                <span class="icon">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span class="text-uppercase">Back to Home</span>
+            </a>
+        </div>
+    </div>
+{% endif %}
 {% endblock %}
  

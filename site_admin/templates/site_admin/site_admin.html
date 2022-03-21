@@ -7,7 +7,7 @@
 
 {% block extra_title %}| Site Admin{% endblock %}
 {% block content %}
-{% if user.is_authenticated %}
+{% if user.is_superuser %}
     <div id="content-container" class="container">
         <div class="row">
             <div class="col">
