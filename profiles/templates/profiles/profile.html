@@ -36,7 +36,7 @@
                                     <ul class="list-unstyled">
                                         {% for item in order.lineitems.all %}
                                         <li class="small">
-                                            <a href="{{ item.product.file.url }}" download>{{ item.product.name }}</a>
+                                            <a href="{{ item.product.download_link }}">{{ item.product.name }}</a>
                                         </li>
                                         {% endfor %}
                                     </ul>

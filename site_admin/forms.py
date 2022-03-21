@@ -6,4 +6,4 @@ class AddProductForm(forms.ModelForm):
     class Meta:
         """ Model Form Meta """
         model = Packs
-        fields = ['name', 'category', 'price', 'description', 'image', 'file', 'demo_link', 'stripe_price_id']
+        fields = ['name', 'category', 'price', 'description', 'image', 'download_link', 'demo_link', 'stripe_price_id']
