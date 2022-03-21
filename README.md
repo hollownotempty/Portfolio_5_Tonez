@@ -35,13 +35,16 @@
 ## Structure
 
 ### Common Elements
+
 There are some common elements across all pages on the site. These include the nav bar on the side of the screen, the search bar and the shopping cart. On the mobile version of the site, some of these elements collapse into the side menu. 
 
 ### Home
+
 This page features a sliding carousel of some of the currently available packs and a button to go directly to the packs page. 
 
 ### Login/Signup
-Simple login and signup layout page, powered by Django Allauth. 
+
+Simple login and signup layout page, powered by Django Allauth and styled using bootstrap. 
 
 ### Packs Page
 
@@ -51,6 +54,14 @@ This page uses django template logic to render all of the packs on the site into
 
 The pack detail page features all the necessary information for the user. This includes the artwork, name, description, price and an 'add to cart' button. This page also features an embedded Soundcloud player with a demo of the pack. This is either a loop from the pack or a selection of sounds.
 
+### Checkout Page
+
+The checkout page for this app directs users to the prebuilt Stripe checkout page. This checkout page is populated using the Stripe ID field on each product and displaying the corresponding item that has been set on the Stripe dashboard.
+
+### Checkout Success Page
+
+This is the page that users are redirected to once the checkout has succeeded. It displays there order number and gives them the links to download the products that they purchased.
+
 ### Profile Page
 
 Seeing as this site doesn't have much in the way of a social aspect, I decided to use the profile page as a list of the users previous orders. From here they can also redownlaod any purchased packs from the list.
@@ -59,17 +70,19 @@ Seeing as this site doesn't have much in the way of a social aspect, I decided t
 
 The admin panel can be accessed through the profile page of any superuser on the site. From here you can add, remove or update any product for the site.
 
-
 ## Wireframes
 
 The basic wireframes for this project can be viewed [here](#)
 
 ## Facebook
+
 A facebook business page was created for this assignment in accordance with the project requirements. The live page can be viewed [here](https://www.facebook.com/tonez.aiff/)
 
 ![tonez_facebook](../Portfolio_5_Tonez/media/images/facebook_tonez_screenshot%20.png)
 
 ## User Stories
+
+User stories and their respective tests are documented in ![TESTING.md](TESTING.md)
 
 ## Technology Design
 
@@ -102,19 +115,21 @@ Using Stripe's documentation I figured out how to redirect to their own built ch
 ### Frameworks
    1. [Django](https://www.djangoproject.com/) - The main framework used to create this project.
    2. [Bootstrap](https://getbootstrap.com/) - Used for responsive and easy css. 
+   2. [Font Awesome](https://fontawesome.com/) - Easy to use icon cdn. 
 
 ### Applications
    1. TinyPNG - Used to compress images
    2. Gitpod - Cloud based IDE used for development
+   2. [VS Code](https://code.visualstudio.com/) - I switched to VS Code during the project for ease of use
    3. Heroku - Cloud platform used to host app
    4. [unsplash](https://www.unsplash.com/) - Stock image site used to source images
    5. [Stripe](https://www.stripe.com/) - Financial software used to process payments
 
 ## Validation 
 All validations passed with no errors (except for HTML, which had non important errors thrown by the django template language that were ignored)
-      - All Python code has been validated using the [PEP8 Online Check](http://pep8online.com/)
-      - HTML has been validated using the [W3C validator](https://validator.w3.org/nu/)
-      - CSS has been validated using the [Jigsaw validator](https://jigsaw.w3.org/css-validator/)
+   - All Python code has been validated using the [PEP8 Online Check](http://pep8online.com/)
+   - HTML has been validated using the [W3C validator](https://validator.w3.org/nu/)
+   - CSS has been validated using the [Jigsaw validator](https://jigsaw.w3.org/css-validator/)
 
 ## Testing
 
@@ -159,6 +174,7 @@ These are the steps used to deploy this application to Heroku:
 ### Coding tips and tricks
 
 1. I had help with Stripe webhooks from the official [Stripe Youtube Channel](https://www.youtube.com/watch?v=oYSLhriIZaA&t=254s).
-2. 
+2. [Section.io](https://www.section.io/engineering-education/how-to-send-email-in-django/) had a great article on how to send emails over smtp using Gmail and Django.
+3. [Alasdair](https://stackoverflow.com/questions/8971606/how-to-set-foreign-key-during-form-completion-python-django) on Stack Overflow helped when trying to set a foreign key in my reply form. 
 
 ### Acknowledgments

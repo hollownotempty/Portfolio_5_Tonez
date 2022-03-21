@@ -4,6 +4,28 @@
 
 ## User Story Testing
 
+1. As {User} I want {Be able to search for packs} so that {So i can filter specifically what I'm looking for }.
+
+2. As {ADMIN} I want {TO BE ABLE TO ADD, REMOVE OR UPDATE ANY PRODUCT} so that {CONTROL THE PRODUCTS ON THE SITE}.
+
+3. As {User} I want {See a list of all the packs available} so that {I can browse for sounds I want or may not know I want}.
+
+4. As {User} I want {Be able to filter by category} so that {I can see the broad range of packs in the category I'm looking for }.
+
+5. As {User} I want {be able to login and sign up easily} so that {i can access my profile}.
+
+6. As {User} I want {Be able to hear a demo of any pack} so that {I can decide if I want to purchase this pack or not}.
+
+7. As {User} I want {Register a profile} so that {I can have a profile on the sites}.
+
+8. As {User} I want {Be able to download my purchased packs} so that {I can have them on any system or redownloaded them if I lose them}.
+
+9. As {User} I want {See popular packs on the home page} so that {I can discover new sounds based on what's new or popular}.
+
+10. As {User} I want {Have a list of my purchased packs} so that {So that I can see what packs I have available}.
+
+11. As {USER} I want {TO BE ABLE TO CONTACT THE SITE} so that {I CAN ENQUIRE ABOUT ANY ISSUES I MAY HAVE}.
+
 ## Stripe CLI
 
  The Stripe CLI was used to test the webhook handling. The exact methods of testing were found in the [Stripe Documentation](https://stripe.com/docs/payments/handling-payment-events#use-cli) and were followed precisely to ensure that the handler worked as intended. 
