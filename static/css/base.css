@@ -190,6 +190,14 @@ footer a {
     bottom: 10px;
 }
 
+@media screen and (max-width: 768px){
+    .message-container {
+        right: 20px;
+    }
+}
+
+
+
 .shop-now-btn {
     background-color: rgb(118,131,217);
 }
