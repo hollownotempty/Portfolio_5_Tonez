@@ -42,11 +42,12 @@
 
     <div id="inner-container" class="row">
 
-      <div id="sidebar" class="col-2 bg-black text-light sticky-top text-center d-none d-sm-none d-md-block">
+      <div id="sidebar" class="col-2 bg-custom-gradient text-light sticky-top text-center d-none d-sm-none d-md-block">
 
         <div id="main-nav" class="row">
           <div class="align-middle">
-            <h1 id="logo" class="display-1 my-2">Tonez</h1>
+            <!-- <h1 id="logo" class="display-1 my-2">Tonez</h1> -->
+            <a href="{% url 'home' %}"><img id="logo" class="display-1" src="{% static 'images/tonez_logo.png' %}" alt="Tonez logo"></a>
           </div>
           <hr>
           <ul class="nav flex-column nav-fill">

@@ -21,6 +21,14 @@ a {
     font-family: 'Roboto', sans-serif;
 }
 
+.bg-custom-gradient {
+    background: rgb(118,131,217);
+    background: -moz-linear-gradient(0deg, rgba(118,131,217,1) 0%, rgba(216,160,254,1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(118,131,217,1) 0%, rgba(216,160,254,1) 100%);
+    background: linear-gradient(0deg, rgba(118,131,217,1) 0%, rgba(216,160,254,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7683d9",endColorstr="#d8a0fe",GradientType=1);
+}
+
 /* ------------------- Side Bar */
 
 #sidebar,
@@ -38,7 +46,9 @@ a {
 }
 
 #logo {
-    font-family: 'Bebas Neue', sans-serif;
+    max-width: 70%;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .nav-link {
@@ -178,6 +188,10 @@ footer a {
     position: fixed;
     right: 10px;
     bottom: 10px;
+}
+
+.shop-now-btn {
+    background-color: rgb(118,131,217);
 }
 
 /* ------------------------- Carousel */
