@@ -13,10 +13,11 @@
     <div class="row">
         {% for pack in packs %}
             <div class="col-sm-6 col-md-6 col-lg-3 col-xl-4">
+                <a href="{% url 'pack_detail' pack.id %}">
                 <div class="card h-100 border-0">
-                    <a href="{% url 'pack_detail' pack.id %}">
+                    <!-- <a href="{% url 'pack_detail' pack.id %}"> -->
                         <img class="card-img-top img-fluid" src="{{ pack.image.url }}" alt="{{ pack.name }}">
-                    </a>
+                    <!-- </a> -->
                     <div class="card-body pb-0">
                         <p class="mb-0">{{ pack.name }}</p>
                     </div>
@@ -33,6 +34,8 @@
                         </div>
                     </div>
                 </div>
+            </a>
+
             </div>
         {% endfor %}
     </div>

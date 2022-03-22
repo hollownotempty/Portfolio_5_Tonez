@@ -13,8 +13,12 @@ h4 {
 }
 
 a {
-    color: white;
+    color: black;
     text-decoration: none;
+}
+
+a:hover {
+    color: rgb(118,131,217);
 }
 
 .roboto {
@@ -63,12 +67,12 @@ a {
 
 
 
-a:hover {
+.nav-link:hover {
     color: white;
     opacity: 0.7;
 }
 
-a:active {
+.nav-link:active {
     color: white;
     opacity: 0.7;
 }
