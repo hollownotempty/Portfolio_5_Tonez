@@ -68,7 +68,7 @@ Seeing as this site doesn't have much in the way of a social aspect, I decided t
 
 ### Admin Panel
 
-The admin panel can be accessed through the profile page of any superuser on the site. From here you can add, remove or update any product for the site.
+The admin panel can be accessed through the profile page of any superuser on the site. From here you can add, remove or update any product for the site. The admin can also respond to contact submissions and send newsletters out.
 
 ## Wireframes
 
@@ -96,6 +96,8 @@ There are multiple custom models for this project:
 4. UserProfile - The profile tied to an User, used to display any necessary information on the profile page
 5. Packs - Each individual pack falls into this model, containing all of the information for the store as well as the url for the downloadable file
 6. Categories - The categories associated with each pack
+7. Subscriber - Model storing anybody who signs up to the newsletter
+8. Newsletter - This model is used to create a model form to send out an email to all subscribers
 
 ### User Interface
 
