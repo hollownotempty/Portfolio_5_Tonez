@@ -1,9 +1,12 @@
+from multiprocessing import context
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
 from .forms import AddProductForm
+from newsletter.models import Subscriber
 from contact.forms import ReplyForm
+from newsletter.forms import SendNewsletter
 from store.models import Packs
 from contact.models import ContactSubmission
 
@@ -123,3 +126,27 @@ def contact_submission_detail(request, submission_id):
         'form': form,
     }
     return render(request, 'site_admin/contact_submission_detail.html', context)
+
+
+def send_newsletter(request):
+    """
+    Page to send a newsletter to all subscribers from
+    """
+    form = SendNewsletter()
+    subscribers = Subscriber.objects.all()
+
+
+    if request.method == 'POST':
+        form = SendNewsletter(request.POST)
+        if form.is_valid():
+            form.save()
+            subject = form.cleaned_data.get('subject')
+            message = form.cleaned_data.get('message')
+            send_mail(subject, message, settings.EMAIL_HOST_USER, subscribers)
+            return redirect('site_admin')
+
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'site_admin/send_newsletter.html', context)

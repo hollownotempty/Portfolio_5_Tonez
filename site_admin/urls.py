@@ -10,4 +10,5 @@ urlpatterns = [
     path('update_product_detail/<product_id>', views.update_product_detail, name='update_product_detail'),
     path('contact_submissions/', views.contact_submissions, name='contact_submissions'),
     path('contact_submission_detail/<submission_id>', views.contact_submission_detail, name='contact_submission_detail'),
+    path('send_newsletter/', views.send_newsletter, name='send_newsletter'),
 ]

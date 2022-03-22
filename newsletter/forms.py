@@ -1,5 +1,5 @@
 from django import forms
-from .models import Subscriber
+from .models import Subscriber, Newsletter
 
 class NewsletterForm(forms.ModelForm):
     """
@@ -9,3 +9,12 @@ class NewsletterForm(forms.ModelForm):
         """ Model Form Meta """
         model = Subscriber
         fields = ['email']
+
+
+class SendNewsletter(forms.ModelForm):
+    """
+    Form to write and send a new newsletter
+    """
+    class Meta:
+        model = Newsletter
+        fields = ['subject', 'message']
