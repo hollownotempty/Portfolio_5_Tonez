@@ -77,6 +77,7 @@ def update_product_detail(request, product_id):
     form = AddProductForm(request.POST or None, instance=product)
 
     if form.is_valid():
+        form = AddProductForm(request.POST or None, request.FILES or None, instance=product)
         form.save()
         messages.success(request, f'Successfully updated {product.name}.')
         return redirect('update_product')
