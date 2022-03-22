@@ -98,7 +98,7 @@
 
       </div>
 
-      <div id="sidebar-mobile" class="collapse collapse-horizontal bg-black text-light sticky-top text-center d-md-none">
+      <div id="sidebar-mobile" class="collapse collapse-horizontal bg-custom-gradient text-light sticky-top text-center d-md-none">
         <div id="main-nav" class="row">
           <!-- <a data-bs-toggle="collapse" href="#sidebar-mobile" role="button" aria-expanded="true" aria-controls="sidebar-mobile">
             <i class="fas fa-times"></i>
@@ -119,7 +119,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="{% url 'shopping_cart' %}">
+              <a href="{% url 'shopping_cart' %}" class="nav-link">
                 <i class="fas fa-shopping-bag"></i>
                 <p class="my-0">
                   {% if grand_total %}
@@ -132,17 +132,17 @@
             </li>
 
             <li class="nav-item">
-              <a data-bs-toggle="collapse" href=".collapse" role="button" aria-expanded="true" aria-controls="collapse">
+              <a data-bs-toggle="collapse" href=".collapse" role="button" aria-expanded="true" aria-controls="collapse" class="text-white">
                 <i class="fas fa-times"></i>
               </a>            
             </li>
           </ul>
         </div>
-        <footer class="row sticky-bottom">
+        <footer class="row">
           <ul class="list-inline my-2">
-            <li class="list-inline-item"><a href="https://www.facebook.com/tonez.aiff" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-            <li class="list-inline-item"><a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.facebook.com/tonez.aiff" target="_blank" class="footer-link"><i class="fab fa-facebook-f"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.twitter.com/" target="_blank" class="footer-link"><i class="fab fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.instagram.com/" target="_blank" class="footer-link"><i class="fab fa-instagram"></i></a></li>
           </ul>
           <p><small>Copyright Tonez 2022 &#169;</small></p>
         </footer>

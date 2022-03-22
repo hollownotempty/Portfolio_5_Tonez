@@ -39,6 +39,7 @@ a:hover {
 #sidebar-mobile {
     padding: 0;
     height: 100vh;
+    z-index: 10000000000000;
 }
 
 #sidebar-mobile .nav {
@@ -65,9 +66,12 @@ a:hover {
     text-decoration: none;
 }
 
+.footer-link {
+    color: white;
+}
 
-
-.nav-link:hover {
+.nav-link:hover,
+.footer-link:hover {
     color: white;
     opacity: 0.7;
 }
