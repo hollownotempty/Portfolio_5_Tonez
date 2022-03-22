@@ -85,6 +85,15 @@
               15% off your order with 'CODE15' at checkout!
             </p>
           </div>
+          <hr>
+          <div>
+            <p><small>Sign up for our newsletter!</small></p>
+            <form action="{% url 'newsletter_signup' %}" method="POST">
+              {% csrf_token %}
+              {{ NewsletterForm|crispy }}
+              <input type="submit" class="btn">
+            </form>
+          </div>
         </div>
 
         <footer class="row w-100">
