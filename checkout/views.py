@@ -1,18 +1,17 @@
+import json
+
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.conf import settings
+from django.template.loader import get_template
+from django.core.mail import EmailMultiAlternatives
 
-from checkout.models import Order, OrderLineItem
-from store.models import Packs
-from profiles.models import UserProfile
-from .forms import OrderForm
 
-import json
 import stripe
 
+from checkout.models import OrderLineItem
 from store.models import Packs
-
-
+from profiles.models import UserProfile
 from .forms import OrderForm
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -45,7 +44,7 @@ def create_checkout_session(request):
         request.session['email'] = request.POST['email']
         request.session['phone_number'] = request.POST['phone_number']
 
-    YOUR_DOMAIN = 'https://portfolio-5-tonez.herokuapp.com/'
+    YOUR_DOMAIN = 'http://127.0.0.1:8000/'
 
     cart = request.session.get('cart', {})
 
@@ -105,13 +104,27 @@ def success(request):
                         )
                         order_line_item.save()
 
-    profile = UserProfile.objects.get(user=request.user)
-    order.user_profile = profile
-    order.save()
+    if request.user.is_anonymous:
+        order.user_profile = None
+    else:
+        profile = UserProfile.objects.get(user=request.user)
+        order.user_profile = profile
+        order.save()
+
+
 
     context = {
         'order': order,
     }
+
+    # Email
+
+    subject, from_email, to = f"Order: {order.order_number}", settings.EMAIL_HOST_USER, order.email
+    text_content = get_template('checkout/email/checkout_success.txt').render(context)
+    html_content = get_template('checkout/email/checkout_success.html').render(context)
+    msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+    msg.attach_alternative(html_content, "text/html")
+    msg.send()
 
     if 'cart' in request.session:
         del request.session['cart']

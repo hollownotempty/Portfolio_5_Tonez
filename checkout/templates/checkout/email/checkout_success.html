@@ -1,0 +1,14 @@
+<h1>Thank you for your order with Tonez!</h1>
+
+<p><strong>Order Number:</strong> {{ order.order_number }}</p>
+
+<p>Here are the downloads for your order:</p>
+
+<ul>
+    {% for item in order.lineitems.all %}
+        <li>
+            <a href="{{ item.product.download_link }}">{{ item.product.name }}</a>
+        </li>
+    {% endfor %}
+</ul>
+

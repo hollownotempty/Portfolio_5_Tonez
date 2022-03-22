@@ -1,0 +1,14 @@
+Thank you for your order with Tonez!
+
+Order Number:</strong>{{ order.order_number }}
+
+Here are the downloads for your order:
+
+
+{% for item in order.lineitems.all %}
+
+{{ item.product.name }}: {{ item.product.download_link }}{{ item.product.name }}
+
+{% endfor %}
+
+
