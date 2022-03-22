@@ -1,6 +1,6 @@
 # Tonez - Sample Store
 
-![home_page](static/images/screenshots/home_page_screenshot.png)
+![home_page](static/images/site_screenshots/home.png)
 
 ## Contents
 
@@ -40,21 +40,33 @@ There are some common elements across all pages on the site. These include the n
 
 ### Home
 
+![home_page](static/images/site_screenshots/home.png)
+
 This page features a sliding carousel of some of the currently available packs and a button to go directly to the packs page. 
 
 ### Login/Signup
+
+![login](static/images/site_screenshots/sign_in.png)
+
 
 Simple login and signup layout page, powered by Django Allauth and styled using bootstrap. 
 
 ### Packs Page
 
+![packs](static/images/site_screenshots/store_packs.png)
+
+
 This page uses django template logic to render all of the packs on the site into a scrollable view. From here packs can be clicked to open the pack detail page, or the pack category can be clicked to display all of the packs with the same category. Similary, any search queries that have been made with the search bar return this page with any packs that contain the query in either the title or the description. 
 
 ### Pack Detail Page
 
+![pack_detail](static/images/site_screenshots/pack_detail.png)
+
 The pack detail page features all the necessary information for the user. This includes the artwork, name, description, price and an 'add to cart' button. This page also features an embedded Soundcloud player with a demo of the pack. This is either a loop from the pack or a selection of sounds.
 
 ### Checkout Page
+
+![checkout](static/images/site_screenshots/cart.png)
 
 The checkout page for this app directs users to the prebuilt Stripe checkout page. This checkout page is populated using the Stripe ID field on each product and displaying the corresponding item that has been set on the Stripe dashboard.
 
@@ -64,9 +76,13 @@ This is the page that users are redirected to once the checkout has succeeded. I
 
 ### Profile Page
 
+![profile](static/images/site_screenshots/profile.png)
+
 Seeing as this site doesn't have much in the way of a social aspect, I decided to use the profile page as a list of the users previous orders. From here they can also redownlaod any purchased packs from the list.
 
 ### Admin Panel
+
+![site_admin](static/images/site_screenshots/site_admin.png)
 
 The admin panel can be accessed through the profile page of any superuser on the site. From here you can add, remove or update any product for the site. The admin can also respond to contact submissions and send newsletters out.
 
