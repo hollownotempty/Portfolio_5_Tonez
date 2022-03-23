@@ -44,7 +44,7 @@ def create_checkout_session(request):
         request.session['email'] = request.POST['email']
         request.session['phone_number'] = request.POST['phone_number']
 
-    YOUR_DOMAIN = 'http://127.0.0.1:8000/'
+    YOUR_DOMAIN = settings.DOMAIN
 
     cart = request.session.get('cart', {})
 
