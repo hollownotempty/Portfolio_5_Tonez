@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://portfolio-5-tonez.herokuapp.com/sitemap.xml

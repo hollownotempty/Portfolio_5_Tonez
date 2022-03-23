@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://portfolio-5-tonez.herokuapp.com/</loc>
+  <lastmod>2022-03-23T11:59:57+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-tonez.herokuapp.com/profile/</loc>
+  <lastmod>2022-03-23T11:59:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-tonez.herokuapp.com/store/packs/</loc>
+  <lastmod>2022-03-23T11:59:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-tonez.herokuapp.com/contact/</loc>
+  <lastmod>2022-03-23T11:59:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-tonez.herokuapp.com/accounts/login/</loc>
+  <lastmod>2022-03-23T11:59:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-tonez.herokuapp.com/cart/</loc>
+  <lastmod>2022-03-23T11:59:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-tonez.herokuapp.com/store/1/</loc>
+  <lastmod>2022-03-23T11:59:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-tonez.herokuapp.com/store/packs/?category=sound_effects</loc>
+  <lastmod>2022-03-23T11:59:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-tonez.herokuapp.com/store/2/</loc>
+  <lastmod>2022-03-23T11:59:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-tonez.herokuapp.com/store/packs/?category=foley</loc>
+  <lastmod>2022-03-23T11:59:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-tonez.herokuapp.com/store/3/</loc>
+  <lastmod>2022-03-23T11:59:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-tonez.herokuapp.com/store/packs/?category=guitar</loc>
+  <lastmod>2022-03-23T11:59:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-tonez.herokuapp.com/store/6/</loc>
+  <lastmod>2022-03-23T11:59:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-tonez.herokuapp.com/store/7/</loc>
+  <lastmod>2022-03-23T11:59:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-tonez.herokuapp.com/store/packs/?category=drums</loc>
+  <lastmod>2022-03-23T11:59:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-tonez.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2022-03-23T11:59:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://portfolio-5-tonez.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2022-03-23T11:59:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
