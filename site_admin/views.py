@@ -1,14 +1,13 @@
-from multiprocessing import context
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
-from .forms import AddProductForm
 from newsletter.models import Subscriber
-from contact.forms import ReplyForm
 from newsletter.forms import SendNewsletter
-from store.models import Packs
+from contact.forms import ReplyForm
 from contact.models import ContactSubmission
+from store.models import Packs
+from .forms import AddProductForm
 
 # Create your views here.
 
@@ -134,14 +133,17 @@ def send_newsletter(request):
     """
     form = SendNewsletter()
     subscribers = Subscriber.objects.all()
+    current_user = request.user
 
 
     if request.method == 'POST':
-        form = SendNewsletter(request.POST)
+        form = SendNewsletter(request.POST or None, request.FILES or None)
         if form.is_valid():
-            form.save()
             subject = form.cleaned_data.get('subject')
             message = form.cleaned_data.get('message')
+            instance = form.save(commit=False)
+            instance.writer = current_user
+            instance.save()
             send_mail(subject, message, settings.EMAIL_HOST_USER, subscribers)
             return redirect('site_admin')
 
