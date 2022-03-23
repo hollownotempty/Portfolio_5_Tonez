@@ -194,5 +194,10 @@ These are the steps used to deploy this application to Heroku:
 1. I had help with Stripe webhooks from the official [Stripe Youtube Channel](https://www.youtube.com/watch?v=oYSLhriIZaA&t=254s).
 2. [Section.io](https://www.section.io/engineering-education/how-to-send-email-in-django/) had a great article on how to send emails over smtp using Gmail and Django.
 3. [Alasdair](https://stackoverflow.com/questions/8971606/how-to-set-foreign-key-during-form-completion-python-django) on Stack Overflow helped when trying to set a foreign key in my reply form. 
+4. [This CSS background animator](https://codepen.io/quadbaup/full/ZEQqzqM) was a really cool tool to animate the nav bar with.
 
 ### Acknowledgments
+
+Thank you to my mentor Akshat with his help on this assignment. I'd like to also thank the Slack community for their continued support over the course of this and my other assignments. Big shout-out to my buddy Paul for supplying some sounds for the packs populating this site. 
+
+As my last assignment I want to acknowledge the entire Code Institute community for their help and support over the last year. This has been a challenging year but I'm happy where I've come with it since I started. 
