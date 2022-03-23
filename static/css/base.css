@@ -27,10 +27,19 @@ a:hover {
 
 .bg-custom-gradient {
     background: rgb(118,131,217);
-    background: -moz-linear-gradient(0deg, rgba(118,131,217,1) 0%, rgba(216,160,254,1) 100%);
+    /* background: -moz-linear-gradient(0deg, rgba(118,131,217,1) 0%, rgba(216,160,254,1) 100%);
     background: -webkit-linear-gradient(0deg, rgba(118,131,217,1) 0%, rgba(216,160,254,1) 100%);
     background: linear-gradient(0deg, rgba(118,131,217,1) 0%, rgba(216,160,254,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7683d9",endColorstr="#d8a0fe",GradientType=1);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7683d9",endColorstr="#d8a0fe",GradientType=1); */
+
+    animation: animateBg 10s linear infinite;
+    background-image: linear-gradient(0deg,#7683d9,#d8a0fe,#7683d9,#d8a0fe);
+    background-size: 100% 300%;
+}
+
+@keyframes animateBg {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 0% 100%; }
 }
 
 /* ------------------- Side Bar */
@@ -276,6 +285,13 @@ footer a {
 
 .shop-now-btn a:hover {
     opacity: .8;
+}
+
+#mobile-logo {
+    z-index: 10000;
+    color: rgb(118,131,217);
+    margin-top: 39px;
+    text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.24);
 }
 
 /* ------------------------- Search Bar */
