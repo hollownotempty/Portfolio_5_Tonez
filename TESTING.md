@@ -6,25 +6,148 @@
 
 1. As {User} I want {Be able to search for packs} so that {So i can filter specifically what I'm looking for }.
 
+    <details>
+    <summary>Steps</summary>
+
+        1. From home page click on Pack
+
+        2. Click on the search bar at the top of the page
+
+        3. Type in what you are searching for
+
+        4. The list of packs will be narrowed down to those containing your search query
+    </details>
+
 2. As {ADMIN} I want {TO BE ABLE TO ADD, REMOVE OR UPDATE ANY PRODUCT} so that {CONTROL THE PRODUCTS ON THE SITE}.
+
+    <details>
+    <summary>Steps</summary>
+
+        1. Sign in to your superuser account from the login menu
+
+        2. This will display an admin link in the nav bar that you will click
+
+        3. From here click on the task that you want to achieve (add, remove, update etc.)
+
+        4. Follow the details on screen to fulfil your task
+    </details>
 
 3. As {User} I want {See a list of all the packs available} so that {I can browse for sounds I want or may not know I want}.
 
+    <details>
+    <summary>Steps</summary>
+
+        1. From the home menu, click on packs
+
+        2. Here there will be a list of all packs available on the site
+
+    </details>
+
 4. As {User} I want {Be able to filter by category} so that {I can see the broad range of packs in the category I'm looking for }.
+
+    <details>
+    <summary>Steps</summary>
+
+        1. From the packs menu, find a pack with a category you are interested in
+
+        2. From here you can click on the category displayed on the product card
+
+        3. Alternatively if you are on a pack details page you can click on the category from there
+
+        4. This will display the packs page narrowed down to those with that category
+        
+    </details>
 
 5. As {User} I want {be able to login and sign up easily} so that {i can access my profile}.
 
+    <details>
+    <summary>Steps</summary>
+
+        1. From the home menu click login
+
+        2. Here there will be a link to login to your account or click sign up
+
+        3. If you are signing up, fill in your infomartion
+
+        4. Check your email for a confirmation email
+
+        5. Following this email your account will be created and you can sign in with the details you signed up with
+        
+    </details>
+
 6. As {User} I want {Be able to hear a demo of any pack} so that {I can decide if I want to purchase this pack or not}.
 
-7. As {User} I want {Register a profile} so that {I can have a profile on the sites}.
+    <details>
+    <summary>Steps</summary>
+
+        1. From the packs menu, click on a pack you are interested in buying
+
+        2. At the bottom of the pack detail page there will be an embeded soundcloud player you can hear a demo through
+        
+    </details>
+
+7. As {User} I want {Register a profile} so that {I can have a profile on the site}.
+
+    <details>
+    <summary>Steps</summary>
+
+        1. A user profile is created automatically when you sign up for the website
+        
+    </details>
 
 8. As {User} I want {Be able to download my purchased packs} so that {I can have them on any system or redownloaded them if I lose them}.
 
+    <details>
+    <summary>Steps</summary>
+
+        1. After completing a purchase you will be redirected to a success page
+
+        2. On this page is a summary of your order including your order number and the products you ordered
+
+        3. Click the name of a purchased product to download it
+        
+    </details>
+
 9. As {User} I want {See popular packs on the home page} so that {I can discover new sounds based on what's new or popular}.
+
+    <details>
+    <summary>Steps</summary>
+
+        1. From the home menu these can be seen in the carousel on the right hand side of the screen
+        
+    </details>
 
 10. As {User} I want {Have a list of my purchased packs} so that {So that I can see what packs I have available}.
 
+    <details>
+    <summary>Steps</summary>
+
+        1. After purchasing a pack you it will be on your profile page
+
+        2. This can be accessed by clicking the profile link on the navbar
+
+        3. On this page is a list of previous purchases
+
+        4. Find the purchase you are looking for 
+
+        5. On the right hand side of the table will be the names of the packs purchased
+
+        6. Clicking a name will initiate the download for that pack
+        
+    </details>
+
 11. As {USER} I want {TO BE ABLE TO CONTACT THE SITE} so that {I CAN ENQUIRE ABOUT ANY ISSUES I MAY HAVE}.
+
+    <details>
+    <summary>Steps</summary>
+
+        1. From any page on the site, click the contact link 
+
+        2. Fill out the form on this page with your subject and any relevant information about your enquiry
+
+        3. From here the admins can reply to these messages from the admin panel, sending an email to the person who filled out the form
+        
+    </details>
 
 ## Stripe CLI
 
