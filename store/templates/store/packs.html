@@ -10,7 +10,7 @@
             <div class="col-md-6">
               <div class="card">
                 <div class="input-group rounded-0">
-                  <input type="text" class="form-control border border-black rounded-0" type="text" name="q"
+                  <input class="form-control border border-black rounded-0" type="text" name="q"
                     placeholder="Search...">
                   <button class="btn" type="submit">
                     <span class="icon">
@@ -46,11 +46,10 @@
     <div class="row">
         {% for pack in packs %}
             <div class="col-sm-6 col-md-6 col-lg-3 col-xl-4">
-                <a href="{% url 'pack_detail' pack.id %}">
                 <div class="card h-100 border-0">
-                    <!-- <a href="{% url 'pack_detail' pack.id %}"> -->
+                      <a href="{% url 'pack_detail' pack.id %}">
                         <img class="card-img-top img-fluid" src="{{ pack.image.url }}" alt="{{ pack.name }}">
-                    <!-- </a> -->
+                      </a>
                     <div class="card-body pb-0">
                         <p class="mb-0">{{ pack.name }}</p>
                     </div>
@@ -59,16 +58,12 @@
                             <div class="col pack-details-card">
                                 <p class="lead mb-0 text-left font-weight-bold">${{ pack.price }}</p>
                                 <p class="small mt-1 mb-0">
-                                    <p class="text-muted">
-                                        <a href="{% url 'packs' %}?category={{ pack.category.name }}">{{ pack.category }}</a>
-                                    </p>
+                                        <a class="text-small" href="{% url 'packs' %}?category={{ pack.category.name }}">{{ pack.category }}</a>
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </a>
-
             </div>
         {% endfor %}
     </div>

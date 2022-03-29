@@ -1,9 +1,8 @@
-{% load static %}
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
+  {% load static %}
   {% block meta %}
   <meta http-equiv="X-UA-Compatible" contents="ie=edge">
   <meta charset="utf-8">
@@ -197,7 +196,7 @@
   </div>
 
   {% block postload_js %}
-  <script type="text/javascript">
+  <script>
       var toastElList = [].slice.call(document.querySelectorAll('.toast'))
       var toastList = toastElList.map(function (toastEl) {
         return new bootstrap.Toast(toastEl, option)
