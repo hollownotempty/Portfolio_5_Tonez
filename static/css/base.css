@@ -402,6 +402,10 @@ footer a {
     font-family: 'Roboto', sans-serif;
 }
 
+#id_password {
+    margin: 15px 0;
+}
+
 /* ------------------------- Profile Page */
 
 #profile-container {
